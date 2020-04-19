@@ -1,0 +1,23 @@
+***  Project Details:
+Project Name: webMethods.io End-To-End Monitoring
+Project Description: E2E business flow monitoring and tracing for Software AG Customers, building business flows across various on-premise and cloud projects.
+
+
+
+***  Feature Details:
+Feature key: UHM-1466
+Feature Title: [B2B] Support XML document type 
+Feature GenerateId: 1279251
+Feature Description: [B2B] Support XML document type 
+
+
+
+----------- Commit --------------
+commitDone?: true
+Total lines added: 295
+Total lines Removed: 16
+Total Review Comments: 2
+Review Response:Response [itracId=UHM-1466, totalReviewCounts=2, allReviewHistory={CR-UHM-101={commentCount=2}}]
+
+
+

@@ -1,0 +1,1973 @@
+{
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "1162532",
+    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1162532",
+    "key": "CLTF-636",
+    "fields": {
+        "customfield_13180": "<div class=\"aui-message hint\">\r\n\t<b>Please check</b>\r\n\t<ul>\r\n\t\t<li>Does the feature fulfil the acceptance criteria?</li>\r\n\t\t<li>Does the feature meet the non-functional requirements (e.g. documentation, performance, availability, security, manageability, localizability)?</li>\r\n\t</ul>\r\n</div>",
+        "customfield_17780": null,
+        "customfield_10070": null,
+        "customfield_10230": null,
+        "customfield_10472": null,
+        "fixVersions": [
+            {
+                "self": "https://itrac.eur.ad.sag/rest/api/2/version/193985",
+                "id": "193985",
+                "description": "",
+                "name": "2020Jan-Cloud",
+                "archived": false,
+                "released": false
+            }
+        ],
+        "customfield_10231": null,
+        "resolution": null,
+        "customfield_10750": null,
+        "customfield_10751": null,
+        "customfield_10900": null,
+        "customfield_15080": null,
+        "customfield_17380": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/customFieldOption/36470",
+            "value": "Done",
+            "id": "36470"
+        },
+        "customfield_12080": "1586421916767",
+        "customfield_16680": 0.0,
+        "lastViewed": null,
+        "customfield_12082": "23",
+        "customfield_12081": "95.65217391304348",
+        "customfield_12480": null,
+        "customfield_16684": "\n<div title=\"96%\" style=\"margin-top:5px;width:100px;background-color:white;border-radius:5px;border:thin solid grey;padding:0px;\">\n\t<div style=\"width:96%;background-color:#0899CC;height:0.6em;border-radius:3px;\"></div>\n</div>\n<div style=\"width:100px;text-align:center;font-size:0.8em;\">26 of 27</div>",
+        "customfield_10060": null,
+        "customfield_16683": 27.0,
+        "customfield_16682": 0.0,
+        "customfield_16681": "\n<div title=\"0%\" style=\"margin-top:5px;width:100px;background-color:white;border-radius:5px;border:thin solid grey;padding:0px;\">\n\t<div style=\"width:0%;background-color:#0899CC;height:0.6em;border-radius:3px;\"></div>\n</div>\n<div style=\"width:100px;text-align:center;font-size:0.8em;\">0 of 0</div>",
+        "customfield_10580": null,
+        "customfield_12880": null,
+        "customfield_16687": null,
+        "customfield_16686": "<div><div id=\"hasuserstoriesicon_1162532\" style=\"cursor: pointer;color:#326ca6;\" onclick=\"if(this.innerHTML.substring(0,4) == 'show'){this.innerHTML='<< hide';this.nextElementSibling.style.display='';}else{this.innerHTML='show >>';this.nextElementSibling.style.display='none';}if (typeof gadgets.window !== 'undefined') {gadgets.window.adjustHeight()};\">show &gt;&gt;</div><div id=\"hasuserstories_1162532\" style=\"overflow-x:auto;display:none\"><table class=\"aui\"><tr><th>Key</th><th>Summary</th><th>Status</th><th>Fix Version/s</th><th>Assignee</th><th>Component/s</th><th>Story Points</th><th>Story Sub-type</th></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1176\">UHM-1176</a></td><td>[Metrics] Collect Metrics for Feature Implementation (B2B Cloud Support)</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Implementing</span>\" original-title=\"\">Implementing</span></td><td></td><td>Das, Bapi</td><td></td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-503\">UHM-503</a></td><td>[Refine] B2B Adaption to E2E Monitoring</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Das, Bapi</td><td>Backend</td><td>0</td><td>Refining</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-674\">UHM-674</a></td><td>Implemet e2e agent for b2b cloud</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Das, Bapi</td><td>Backend</td><td>0</td><td></td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-655\">UHM-655</a></td><td>B2B cloud local setup</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Pandey, Sunil</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-687\">UHM-687</a></td><td>[Test] Testing Design for B2B E2E Monitoring</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Pandey, Sunil</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-980\">UHM-980</a></td><td> [Test] Testing Execution for B2B E2E Monitoring</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Pandey, Sunil</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-988\">UHM-988</a></td><td>[Ux] Ux reviews for B2B icons and overall display</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Goenka, Deepak</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/KUB-853\">KUB-853</a></td><td>To Setup UHM collector for B2B</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td>20.04</td><td>Kisku, Dewesh Kumar</td><td>BOC</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/KUB-854\">KUB-854</a></td><td>To Setup UHM agent for B2B pods</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td>20.04</td><td>Kisku, Dewesh Kumar</td><td>BOC</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/KUB-1075\">KUB-1075</a></td><td>[KUB] E2E. Monitoring agent should be part of B2B daily image building process</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Kisku, Dewesh Kumar</td><td></td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1104\">UHM-1104</a></td><td>[Unit Test] Implement, Execute and link all B2B Unit tests to BVT</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Das, Bapi</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/BOC-3577\">BOC-3577</a></td><td>[BOC]Group status api's for getting transaction status</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Deshpande, Amit Anantrao</td><td>B2B App</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1077\">UHM-1077</a></td><td>[B2B] Processing Duration of Wmio B2B is not displayed.</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Das, Bapi</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1078\">UHM-1078</a></td><td>[B2B] TenantID is not getting stored for B2B in Transaction Table in Elastic Search</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Pandey, Sunil</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1159\">UHM-1159</a></td><td>[Ux] Ui Visualization B2B Cloud Scenarios</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Kumar, Rupesh</td><td>UI</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1160\">UHM-1160</a></td><td>[Code-review]  B2B Implementation</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Goenka, Deepak</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1216\">UHM-1216</a></td><td>[B2B] Data points needs to be updated</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Das, Bapi</td><td>Backend</td><td>0</td><td></td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1249\">UHM-1249</a></td><td>[Documentation] Document E2E Monitoring support for B2B Cloud</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Jathanna, Royston Suresh</td><td></td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1290\">UHM-1290</a></td><td>[B2B Setup] Setup / update B2B local environment with latest B2B codebase</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Das, Bapi</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1296\">UHM-1296</a></td><td>[Performance]  Performance base mark for B2B agents</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Das, Bapi</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1375\">UHM-1375</a></td><td>[Test-Automation] Test Automation for B2B E2E Monitoring</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Pandey, Sunil</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1388\">UHM-1388</a></td><td>[B2B] B2B \"Done With Error\" transaction is not displaying Failure Error Message in Transaction Details Page.</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Pandey, Sunil</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1466\">UHM-1466</a></td><td>[B2B] Support XML document type </td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Chakravarty, Ranjana</td><td>Backend</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/KUB-1655\">KUB-1655</a></td><td>Add CS plugin to wmio spro environment to support b2b app in wmio</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Completed</span>\" original-title=\"\">Completed</span></td><td></td><td>Shyam Reuban, Naveen</td><td>UHM</td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/CLTS-4114\">CLTS-4114</a></td><td>Security guidance</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Closed</span>\" original-title=\"\">Closed</span></td><td></td><td>Das, Bapi</td><td>Security Impact Analysis</td><td>0</td><td></td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/UHM-1354\">UHM-1354</a></td><td>[B2B] add more details link to show B2B details</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Closed</span>\" original-title=\"\">Closed</span></td><td></td><td>Sahu, Ajoy</td><td></td><td>0</td><td>Implementation</td></tr><tr><td><a href=\"https://itrac.eur.ad.sag/browse/CLTS-7031\">CLTS-7031</a></td><td>Adapt changes for WMIO 6.0</td><td><span class=\" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done jira-issue-status-lozenge-max-width-short\" data-tooltip=\"<span class=&quot;jira-issue-status-tooltip-title&quot;>Closed</span>\" original-title=\"\">Closed</span></td><td></td><td>Das, Bapi</td><td>UHM</td><td>0</td><td></td></tr></table></div></div>",
+        "customfield_10220": null,
+        "customfield_12881": null,
+        "customfield_16685": 96.0,
+        "customfield_10980": "9223372036854775807",
+        "customfield_10221": null,
+        "customfield_10981": "9223372036854775807",
+        "labels": [
+            "2020Jan_release",
+            "IntegrationTesting_Scope"
+        ],
+        "customfield_10620": null,
+        "customfield_10216": null,
+        "customfield_10217": null,
+        "customfield_10218": null,
+        "aggregatetimeoriginalestimate": null,
+        "timeestimate": null,
+        "customfield_10219": null,
+        "issuelinks": [
+            {
+                "id": "997467",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/997467",
+                "type": {
+                    "id": "10000",
+                    "name": "Duplicate",
+                    "inward": "is duplicated by",
+                    "outward": "duplicates",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10000"
+                },
+                "inwardIssue": {
+                    "id": "1201050",
+                    "key": "CLTF-1062",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1201050",
+                    "fields": {
+                        "summary": "[B2B-CLOUD] Support E2E Monitoring in B2B Cloud",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/6",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_closed-sag.gif",
+                            "name": "Closed",
+                            "id": "6",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/19",
+                            "id": "19",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/feature.gif",
+                            "name": "Feature",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "947415",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/947415",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "outwardIssue": {
+                    "id": "1162119",
+                    "key": "SF-239",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1162119",
+                    "fields": {
+                        "summary": "Provide End to end transaction monitoring of business flows across cloud systems ",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/10200",
+                            "id": "10200",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/secure/viewavatar?size=xsmall&avatarId=42900&avatarType=issuetype",
+                            "name": "Super Feature",
+                            "subtask": false,
+                            "avatarId": 42900
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1008171",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1008171",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1243452",
+                    "key": "UHM-1176",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1243452",
+                    "fields": {
+                        "summary": "[Metrics] Collect Metrics for Feature Implementation (B2B Cloud Support)",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10013",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_inprogress-sag.gif",
+                            "name": "Implementing",
+                            "id": "10013",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/4",
+                                "id": 4,
+                                "key": "indeterminate",
+                                "colorName": "yellow",
+                                "name": "In Progress"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1002558",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1002558",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1236694",
+                    "key": "BOC-3577",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1236694",
+                    "fields": {
+                        "summary": "[BOC]Group status api's for getting transaction status",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "997457",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/997457",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1216352",
+                    "key": "KUB-853",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1216352",
+                    "fields": {
+                        "summary": "To Setup UHM collector for B2B",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "997458",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/997458",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1216354",
+                    "key": "KUB-854",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1216354",
+                    "fields": {
+                        "summary": "To Setup UHM agent for B2B pods",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1000894",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1000894",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1234659",
+                    "key": "KUB-1075",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1234659",
+                    "fields": {
+                        "summary": "[KUB] E2E. Monitoring agent should be part of B2B daily image building process",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "969373",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/969373",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1193414",
+                    "key": "UHM-503",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1193414",
+                    "fields": {
+                        "summary": "[Refine] B2B Adaption to E2E Monitoring",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "981633",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/981633",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1207556",
+                    "key": "UHM-655",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1207556",
+                    "fields": {
+                        "summary": "B2B cloud local setup",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "981504",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/981504",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1210699",
+                    "key": "UHM-674",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1210699",
+                    "fields": {
+                        "summary": "Implemet e2e agent for b2b cloud",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "982811",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/982811",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1212348",
+                    "key": "UHM-687",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1212348",
+                    "fields": {
+                        "summary": "[Test] Testing Design for B2B E2E Monitoring",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "993816",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/993816",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1225833",
+                    "key": "UHM-980",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1225833",
+                    "fields": {
+                        "summary": " [Test] Testing Execution for B2B E2E Monitoring",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "993930",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/993930",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1225940",
+                    "key": "UHM-988",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1225940",
+                    "fields": {
+                        "summary": "[Ux] Ux reviews for B2B icons and overall display",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1000896",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1000896",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1234660",
+                    "key": "UHM-1104",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1234660",
+                    "fields": {
+                        "summary": "[Unit Test] Implement, Execute and link all B2B Unit tests to BVT",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1006467",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1006467",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1241328",
+                    "key": "UHM-1159",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1241328",
+                    "fields": {
+                        "summary": "[Ux] Ui Visualization B2B Cloud Scenarios",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1006468",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1006468",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1241330",
+                    "key": "UHM-1160",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1241330",
+                    "fields": {
+                        "summary": "[Code-review]  B2B Implementation",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1015932",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1015932",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1251587",
+                    "key": "UHM-1216",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1251587",
+                    "fields": {
+                        "summary": "[B2B] Data points needs to be updated",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1018541",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1018541",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1255127",
+                    "key": "UHM-1249",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1255127",
+                    "fields": {
+                        "summary": "[Documentation] Document E2E Monitoring support for B2B Cloud",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1022365",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1022365",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1259834",
+                    "key": "UHM-1290",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1259834",
+                    "fields": {
+                        "summary": "[B2B Setup] Setup / update B2B local environment with latest B2B codebase",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1022368",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1022368",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1259836",
+                    "key": "UHM-1296",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1259836",
+                    "fields": {
+                        "summary": "[Performance]  Performance base mark for B2B agents",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1028653",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1028653",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1268216",
+                    "key": "UHM-1375",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1268216",
+                    "fields": {
+                        "summary": "[Test-Automation] Test Automation for B2B E2E Monitoring",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1039264",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1039264",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1281778",
+                    "key": "KUB-1655",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1281778",
+                    "fields": {
+                        "summary": "Add CS plugin to wmio spro environment to support b2b app in wmio",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/2",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priorities/critical.svg",
+                            "name": "1-Critical",
+                            "id": "2"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1003378",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1003378",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1230522",
+                    "key": "UHM-1077",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1230522",
+                    "fields": {
+                        "summary": "[B2B] Processing Duration of Wmio B2B is not displayed.",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/3",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priorities/major.svg",
+                            "name": "2-High",
+                            "id": "3"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1003379",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1003379",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1230523",
+                    "key": "UHM-1078",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1230523",
+                    "fields": {
+                        "summary": "[B2B] TenantID is not getting stored for B2B in Transaction Table in Elastic Search",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/3",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priorities/major.svg",
+                            "name": "2-High",
+                            "id": "3"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1037291",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1037291",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1279251",
+                    "key": "UHM-1466",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1279251",
+                    "fields": {
+                        "summary": "[B2B] Support XML document type ",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/3",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priorities/major.svg",
+                            "name": "2-High",
+                            "id": "3"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1030474",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1030474",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1270307",
+                    "key": "UHM-1388",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1270307",
+                    "fields": {
+                        "summary": "[B2B] B2B \"Done With Error\" transaction is not displaying Failure Error Message in Transaction Details Page.",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10003",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_comleted-sag.gif",
+                            "name": "Completed",
+                            "id": "10003",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/4",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priorities/minor.svg",
+                            "name": "3-Medium",
+                            "id": "4"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "982155",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/982155",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1211514",
+                    "key": "CLTS-4114",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1211514",
+                    "fields": {
+                        "summary": "Security guidance",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/6",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_closed-sag.gif",
+                            "name": "Closed",
+                            "id": "6",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1025993",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1025993",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1264460",
+                    "key": "UHM-1354",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1264460",
+                    "fields": {
+                        "summary": "[B2B] add more details link to show B2B details",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/6",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_closed-sag.gif",
+                            "name": "Closed",
+                            "id": "6",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1039173",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1039173",
+                "type": {
+                    "id": "10070",
+                    "name": "Feature Hierarchy",
+                    "inward": "is parent Feature of",
+                    "outward": "is child of Feature",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10070"
+                },
+                "inwardIssue": {
+                    "id": "1281673",
+                    "key": "CLTS-7031",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1281673",
+                    "fields": {
+                        "summary": "Adapt changes for WMIO 6.0",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/6",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_closed-sag.gif",
+                            "name": "Closed",
+                            "id": "6",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/3",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priorities/major.svg",
+                            "name": "2-High",
+                            "id": "3"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/15",
+                            "id": "15",
+                            "description": "User Story for a Feature (iTracAgile)",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/user-story.gif",
+                            "name": "User Story",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "1039180",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/1039180",
+                "type": {
+                    "id": "10010",
+                    "name": "Hierarchy",
+                    "inward": "is super-issue of",
+                    "outward": "is sub-issue of",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10010"
+                },
+                "inwardIssue": {
+                    "id": "1281676",
+                    "key": "UHM-1478",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1281676",
+                    "fields": {
+                        "summary": "WMIO Traces are not coming in SPRO env",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/6",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_closed-sag.gif",
+                            "name": "Closed",
+                            "id": "6",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/3",
+                                "id": 3,
+                                "key": "done",
+                                "colorName": "green",
+                                "name": "Done"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/priority/6",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/priority_undefined.gif",
+                            "name": "None",
+                            "id": "6"
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/5",
+                            "id": "5",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/defect.gif",
+                            "name": "Defect",
+                            "subtask": false
+                        }
+                    }
+                }
+            },
+            {
+                "id": "998860",
+                "self": "https://itrac.eur.ad.sag/rest/api/2/issueLink/998860",
+                "type": {
+                    "id": "10011",
+                    "name": "Prerequisite",
+                    "inward": "is required by",
+                    "outward": "requires",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issueLinkType/10011"
+                },
+                "outwardIssue": {
+                    "id": "1184794",
+                    "key": "WF-14554",
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1184794",
+                    "fields": {
+                        "summary": "BoC - Grouping of transactions in the Monitoring screen",
+                        "status": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/status/10036",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_tested-sag.gif",
+                            "name": "Accepted",
+                            "id": "10036",
+                            "statusCategory": {
+                                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/4",
+                                "id": 4,
+                                "key": "indeterminate",
+                                "colorName": "yellow",
+                                "name": "In Progress"
+                            }
+                        },
+                        "issuetype": {
+                            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/19",
+                            "id": "19",
+                            "description": "",
+                            "iconUrl": "https://itrac.eur.ad.sag/images/icons/feature.gif",
+                            "name": "Feature",
+                            "subtask": false
+                        }
+                    }
+                }
+            }
+        ],
+        "assignee": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=inrve",
+            "name": "inrve",
+            "key": "inrve",
+            "emailAddress": "Rameshchandra.Veeturi@softwareag.com",
+            "avatarUrls": {
+                "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+            },
+            "displayName": "Veeturi, Rameshchandra",
+            "active": true,
+            "timeZone": "Asia/Kolkata"
+        },
+        "status": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/status/3",
+            "description": "",
+            "iconUrl": "https://itrac.eur.ad.sag/images/icons/status_inprogress-sag.gif",
+            "name": "In Progress",
+            "id": "3",
+            "statusCategory": {
+                "self": "https://itrac.eur.ad.sag/rest/api/2/statuscategory/4",
+                "id": 4,
+                "key": "indeterminate",
+                "colorName": "yellow",
+                "name": "In Progress"
+            }
+        },
+        "components": [
+            {
+                "self": "https://itrac.eur.ad.sag/rest/api/2/component/101421",
+                "id": "101421",
+                "name": "UHM",
+                "description": "Unified Hybrid Monitoring"
+            }
+        ],
+        "customfield_11380": null,
+        "customfield_15980": "<div>\n<div title=\"96%\" style=\"margin-top:5px;width:100px;background-color:white;border-radius:5px;border:thin solid grey;padding:0px;\">\n\t<div style=\"width:96%;background-color:#0899CC;height:0.6em;border-radius:3px;\"></div>\n</div>\n<div style=\"width:100px;text-align:center;font-size:0.8em;\">26 of 27</div></div>",
+        "customfield_16793": "Initial scope completed.\r\nBOC-3532 [AppSwitcher] waiting on SAG Cloud\r\nKUB-1075 [KUB]  Waiting on Infra for Daily B2B image build with agents\r\n",
+        "customfield_17089": null,
+        "customfield_17088": null,
+        "customfield_17880": 234.0,
+        "customfield_10570": null,
+        "customfield_10296": null,
+        "customfield_16796": "To Do",
+        "customfield_10298": null,
+        "customfield_10970": null,
+        "customfield_10850": null,
+        "customfield_10213": null,
+        "customfield_10730": null,
+        "archiveddate": null,
+        "customfield_10841": [
+            {
+                "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=inrve",
+                "name": "inrve",
+                "key": "inrve",
+                "emailAddress": "Rameshchandra.Veeturi@softwareag.com",
+                "avatarUrls": {
+                    "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                    "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                    "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                    "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+                },
+                "displayName": "Veeturi, Rameshchandra",
+                "active": true,
+                "timeZone": "Asia/Kolkata"
+            }
+        ],
+        "aggregatetimeestimate": null,
+        "creator": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=vidb",
+            "name": "vidb",
+            "key": "vidb",
+            "emailAddress": "Vidya.Bhagwat@softwareag.com",
+            "avatarUrls": {
+                "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+            },
+            "displayName": "Bhagwat, Vidya",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+        },
+        "subtasks": [],
+        "customfield_10281": null,
+        "customfield_12581": null,
+        "customfield_12580": null,
+        "reporter": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=vidb",
+            "name": "vidb",
+            "key": "vidb",
+            "emailAddress": "Vidya.Bhagwat@softwareag.com",
+            "avatarUrls": {
+                "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+            },
+            "displayName": "Bhagwat, Vidya",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+        },
+        "customfield_12981": null,
+        "customfield_12980": null,
+        "aggregateprogress": {
+            "progress": 0,
+            "total": 0
+        },
+        "customfield_10320": null,
+        "customfield_10960": null,
+        "customfield_10840": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=usasga",
+            "name": "usasga",
+            "key": "usasga",
+            "emailAddress": "Sachin.Gadre@softwareag.com",
+            "avatarUrls": {
+                "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+            },
+            "displayName": "Gadre, Sachin",
+            "active": true,
+            "timeZone": "America/New_York"
+        },
+        "customfield_10314": null,
+        "customfield_10318": null,
+        "progress": {
+            "progress": 0,
+            "total": 0
+        },
+        "votes": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/issue/CLTF-636/votes",
+            "votes": 0,
+            "hasVoted": false
+        },
+        "worklog": {
+            "startAt": 0,
+            "maxResults": 20,
+            "total": 0,
+            "worklogs": []
+        },
+        "archivedby": null,
+        "issuetype": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/issuetype/19",
+            "id": "19",
+            "description": "",
+            "iconUrl": "https://itrac.eur.ad.sag/images/icons/feature.gif",
+            "name": "Feature",
+            "subtask": false
+        },
+        "customfield_17580": "<div style=\"max-height:100px; overflow:auto;\" title=\"Das, Bapi added last comment - 29/Aug/19 13:14\">\n    <span style=\"white-space: pre-wrap;\">User Story CLTS-4114 &quot;Security guidance&quot; has been created..\nQuestionnaire Version: 2019-07-18\n+++ Added by action &quot;Feature Security Impact Analysis&quot; +++ </span>\n    </div>",
+        "customfield_10390": null,
+        "customfield_17980": 365.0,
+        "timespent": null,
+        "customfield_11480": null,
+        "customfield_10790": "1000484",
+        "project": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/project/27021",
+            "id": "27021",
+            "key": "CLTF",
+            "name": "Cloud Tech Features",
+            "projectTypeKey": "software",
+            "avatarUrls": {
+                "48x48": "https://itrac.eur.ad.sag/secure/projectavatar?pid=27021&avatarId=55201",
+                "24x24": "https://itrac.eur.ad.sag/secure/projectavatar?size=small&pid=27021&avatarId=55201",
+                "16x16": "https://itrac.eur.ad.sag/secure/projectavatar?size=xsmall&pid=27021&avatarId=55201",
+                "32x32": "https://itrac.eur.ad.sag/secure/projectavatar?size=medium&pid=27021&avatarId=55201"
+            },
+            "projectCategory": {
+                "self": "https://itrac.eur.ad.sag/rest/api/2/projectCategory/10670",
+                "id": "10670",
+                "description": "",
+                "name": "Cloud Tech"
+            }
+        },
+        "customfield_10671": null,
+        "customfield_10550": null,
+        "customfield_10430": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/customFieldOption/10381",
+            "value": "Internal",
+            "id": "10381"
+        },
+        "aggregatetimespent": null,
+        "customfield_10673": null,
+        "customfield_10431": null,
+        "customfield_10674": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/customFieldOption/10603",
+            "value": "Yes",
+            "id": "10603"
+        },
+        "customfield_10940": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "customfield_17182": "<div style='color:#888888;'>\n  <img alt='' width='16' height='16' src='/images/icons/emoticons/information.png' title='Redo \"Feature Security Impact Analysis\" if necessary' />\n  <b>Redo </b>\n  <a class='trigger-dialog' href='/secure/FeatureSecurityImpactAnalysis!default.jspa?issueId=1162532'>Feature Security Impact Analysis</a>\n  <span> if necessary</span>\n</div>",
+        "customfield_16482": null,
+        "watches": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/issue/CLTF-636/watchers",
+            "watchCount": 3,
+            "isWatching": false
+        },
+        "customfield_14180": null,
+        "customfield_14184": "0|i4l387:",
+        "created": "2019-04-19T12:20:38.683+0200",
+        "customfield_14185": "2|hzknsn:",
+        "customfield_10420": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/customFieldOption/10370",
+            "value": "Bug",
+            "id": "10370"
+        },
+        "customfield_10301": null,
+        "customfield_10930": [
+            "Integration_Cloud"
+        ],
+        "customfield_10811": "Cloud: Integration_Cloud",
+        "customfield_10812": "CLTF-636",
+        "updated": "2020-04-15T18:15:49.727+0200",
+        "customfield_16080": null,
+        "customfield_17681": {
+            "active": true
+        },
+        "customfield_17680": 1567077261430,
+        "customfield_10090": null,
+        "customfield_11181": null,
+        "timeoriginalestimate": null,
+        "description": "Description:\r\nRuntime's code to be modified by adding trace generation code in critical methods inside product code, for UHM\r\nBasic Support of B2B cloud in e2e monitoring( Only entry/ exit tracing. No payload & log capture)\r\n\r\nBusiness Value:\r\nComplete E2E tracing of business flow for customers\r\n\r\nRequestor:\r\nPM\r\n\r\niWiki Link for More Details:\r\nhttps://iwiki.eur.ad.sag/display/RNDWMSIQA/CLTF-636%3A+Basic+Support+of+B2B+cloud+in+e2e+monitoring",
+        "customfield_10770": null,
+        "customfield_10254": null,
+        "customfield_10650": null,
+        "customfield_10134": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/customFieldOption/10055",
+            "value": "Medium",
+            "id": "10055"
+        },
+        "customfield_10530": null,
+        "customfield_10531": null,
+        "customfield_10014": [
+            "vidb(vidb)",
+            "bada(bada)",
+            "trafixadmin(trafixadmin)",
+            "inrve(inrve)"
+        ],
+        "timetracking": {},
+        "customfield_10006": null,
+        "customfield_10007": null,
+        "customfield_10920": "1000484",
+        "customfield_10800": 571.0,
+        "attachment": [],
+        "summary": "[VD][B2B-CLOUD-Phase1] Support of B2B cloud in e2e monitoring",
+        "customfield_16581": null,
+        "customfield_16580": "28 Aug 2019 10:13:10 GMT",
+        "customfield_14280": "-E2E agent for b2b cloud should be implemented\r\n-Access mechanism for UHM app from B2B app needs to be established\r\n-Transaction detailed logs of e2e trace in b2b should be linked from UHM\r\n-All defined and planned B2B - API GW Cloud - IC use cases should be supported in UHM E2E flow\r\n",
+        "customfield_10081": null,
+        "customfield_10083": null,
+        "customfield_10084": null,
+        "customfield_10000": null,
+        "customfield_10001": null,
+        "customfield_10243": null,
+        "customfield_10760": null,
+        "customfield_10002": null,
+        "customfield_10244": null,
+        "customfield_10003": null,
+        "customfield_10520": null,
+        "customfield_10246": {
+            "self": "https://itrac.eur.ad.sag/rest/api/2/customFieldOption/10155",
+            "value": "Downloadable from Fix Explorer",
+            "id": "10155"
+        },
+        "environment": null,
+        "duedate": null,
+        "comment": {
+            "comments": [
+                {
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1162532/comment/4353095",
+                    "id": "4353095",
+                    "author": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=vidb",
+                        "name": "vidb",
+                        "key": "vidb",
+                        "emailAddress": "Vidya.Bhagwat@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+                        },
+                        "displayName": "Bhagwat, Vidya",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "body": "Refinement in progress",
+                    "updateAuthor": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=vidb",
+                        "name": "vidb",
+                        "key": "vidb",
+                        "emailAddress": "Vidya.Bhagwat@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+                        },
+                        "displayName": "Bhagwat, Vidya",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "created": "2019-08-07T06:12:52.593+0200",
+                    "updated": "2019-08-07T06:12:52.593+0200"
+                },
+                {
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1162532/comment/4381573",
+                    "id": "4381573",
+                    "author": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=bada",
+                        "name": "bada",
+                        "key": "bada",
+                        "emailAddress": "Bapi.Das@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?ownerId=bada&avatarId=55925",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&ownerId=bada&avatarId=55925",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&ownerId=bada&avatarId=55925",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&ownerId=bada&avatarId=55925"
+                        },
+                        "displayName": "Das, Bapi",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "body": "User Story UHM-674 has been set to Implementing by bada\r\nRationale: ",
+                    "updateAuthor": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=bada",
+                        "name": "bada",
+                        "key": "bada",
+                        "emailAddress": "Bapi.Das@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?ownerId=bada&avatarId=55925",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&ownerId=bada&avatarId=55925",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&ownerId=bada&avatarId=55925",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&ownerId=bada&avatarId=55925"
+                        },
+                        "displayName": "Das, Bapi",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "created": "2019-08-28T09:01:23.447+0200",
+                    "updated": "2019-08-28T09:01:23.447+0200"
+                },
+                {
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1162532/comment/4381806",
+                    "id": "4381806",
+                    "author": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=vidb",
+                        "name": "vidb",
+                        "key": "vidb",
+                        "emailAddress": "Vidya.Bhagwat@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+                        },
+                        "displayName": "Bhagwat, Vidya",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "body": "Moving to TODO as refinement completed and implementation initiated.",
+                    "updateAuthor": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=vidb",
+                        "name": "vidb",
+                        "key": "vidb",
+                        "emailAddress": "Vidya.Bhagwat@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11422",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11422",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11422",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11422"
+                        },
+                        "displayName": "Bhagwat, Vidya",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "created": "2019-08-28T10:13:10.113+0200",
+                    "updated": "2019-08-28T10:13:10.113+0200"
+                },
+                {
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1162532/comment/4381807",
+                    "id": "4381807",
+                    "author": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=trafixadmin",
+                        "name": "trafixadmin",
+                        "key": "trafixadmin",
+                        "emailAddress": "iTracAdmin@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11421",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11421",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11421",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11421"
+                        },
+                        "displayName": "iTrac Admin",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "body": "Issue status has been automatically changed from 'To Do' to 'In Progress' triggered by an activity of user 'iTrac Admin'\nReason: Feature has user stories linked and at least one is in status 'Implementing'",
+                    "updateAuthor": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=trafixadmin",
+                        "name": "trafixadmin",
+                        "key": "trafixadmin",
+                        "emailAddress": "iTracAdmin@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?avatarId=11421",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&avatarId=11421",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&avatarId=11421",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&avatarId=11421"
+                        },
+                        "displayName": "iTrac Admin",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "created": "2019-08-28T10:13:10.130+0200",
+                    "updated": "2019-08-28T10:13:10.130+0200"
+                },
+                {
+                    "self": "https://itrac.eur.ad.sag/rest/api/2/issue/1162532/comment/4384528",
+                    "id": "4384528",
+                    "author": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=bada",
+                        "name": "bada",
+                        "key": "bada",
+                        "emailAddress": "Bapi.Das@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?ownerId=bada&avatarId=55925",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&ownerId=bada&avatarId=55925",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&ownerId=bada&avatarId=55925",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&ownerId=bada&avatarId=55925"
+                        },
+                        "displayName": "Das, Bapi",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "body": "User Story CLTS-4114 \"Security guidance\" has been created..\nQuestionnaire Version: 2019-07-18\n+++ Added by action \"Feature Security Impact Analysis\" +++ ",
+                    "updateAuthor": {
+                        "self": "https://itrac.eur.ad.sag/rest/api/2/user?username=bada",
+                        "name": "bada",
+                        "key": "bada",
+                        "emailAddress": "Bapi.Das@softwareag.com",
+                        "avatarUrls": {
+                            "48x48": "https://itrac.eur.ad.sag/secure/useravatar?ownerId=bada&avatarId=55925",
+                            "24x24": "https://itrac.eur.ad.sag/secure/useravatar?size=small&ownerId=bada&avatarId=55925",
+                            "16x16": "https://itrac.eur.ad.sag/secure/useravatar?size=xsmall&ownerId=bada&avatarId=55925",
+                            "32x32": "https://itrac.eur.ad.sag/secure/useravatar?size=medium&ownerId=bada&avatarId=55925"
+                        },
+                        "displayName": "Das, Bapi",
+                        "active": true,
+                        "timeZone": "Europe/Berlin"
+                    },
+                    "created": "2019-08-29T13:14:21.430+0200",
+                    "updated": "2019-08-29T13:14:21.430+0200"
+                }
+            ],
+            "maxResults": 5,
+            "total": 5,
+            "startAt": 0
+        },
+        "customfield_18080": "{}"
+    }
+}
