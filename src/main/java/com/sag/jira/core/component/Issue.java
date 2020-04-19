@@ -1,5 +1,8 @@
 package com.sag.jira.core.component;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
@@ -25,6 +28,8 @@ public class Issue extends JiraRestCore {
 	private final String id;
 	private IssueParser parser;
 	private JSONObject jsonResponse;
+	private Set<Issue> subtasks = new HashSet<>();
+	private Set<Issue> issueLinks = new HashSet<>();
 
 	public Issue(String id) {
 		this.id = id;
@@ -33,10 +38,26 @@ public class Issue extends JiraRestCore {
 				get(JiraRestConfig.getIssueUrl(id));
 				parser = new IssueParser(clientResponse);
 				jsonResponse = parser.getJsonResponse();
+				populateChildren();
 			} catch (JSONException e) {
 				logger.error("Error in Issue component " + e);
 			}
 		}
+	}
+
+	private void populateChildren() {
+		populateSubtasks();
+		populateIssueLinks();
+	}
+
+	private void populateIssueLinks() {
+		issueLinks = parser.getAllLInkedIssues();
+		System.out.println("Linked issues counts for itrac:" + id + " - " + issueLinks.size() + "\n");
+	}
+
+	private void populateSubtasks() {
+		subtasks = parser.getAllSubtasks();
+		System.out.println("Sub Task counts for itrac:" + id + " - " + subtasks.size());
 	}
 
 	public String getDescription() {
@@ -59,60 +80,60 @@ public class Issue extends JiraRestCore {
 		return parser;
 	}
 
-	public Assignee getAsignee() throws JSONException {
+	public Assignee getAsigneeHandler() throws JSONException {
 		return new Assignee(id, jsonResponse);
 
 	}
 
-	public Comment getComment() throws JSONException {
+	public Comment getCommentHandler() throws JSONException {
 		return new Comment(id, jsonResponse);
 	}
 
-	public Component getComponents() throws JSONException {
+	public Component getComponentsHandler() throws JSONException {
 		return new Component(id, jsonResponse);
 	}
 
-	public FixVersion getFixVersion() throws JSONException {
+	public FixVersion getFixVersionHandler() throws JSONException {
 		return new FixVersion(id, jsonResponse);
 	}
 
-	public Type getIssueType() throws JSONException {
+	public Type getTypeHander() throws JSONException {
 		return new Type(id, jsonResponse);
 	}
 
-	public Label getLabels() throws JSONException {
+	public Label getLabelsHandler() throws JSONException {
 		return new Label(id, jsonResponse);
 	}
 
-	public Priority getPriority() throws JSONException {
+	public Priority getPriorityHandler() throws JSONException {
 		return new Priority(id, jsonResponse);
 	}
 
-	public Project getProject() throws JSONException {
+	public Project getProjectHandler() throws JSONException {
 		return new Project(id, jsonResponse);
 	}
 
-	public Reporter getReporter() throws JSONException {
+	public Reporter getReporterHandler() throws JSONException {
 		return new Reporter(id, jsonResponse);
 	}
 
-	public Resolution getResolution() throws JSONException {
+	public Resolution getResolutionHandler() throws JSONException {
 		return new Resolution(id, jsonResponse);
 	}
 
-	public Status getStatus() throws JSONException {
+	public Status getStatusHandler() throws JSONException {
 		return new Status(id, jsonResponse);
 	}
 
-	public TimeTracker getTimeTracker() throws JSONException {
+	public TimeTracker getTimeTrackerHandler() throws JSONException {
 		return new TimeTracker(id, jsonResponse);
 	}
 
-	public Watcher getWatcher() throws JSONException {
+	public Watcher getWatcherHandler() throws JSONException {
 		return new Watcher(id);
 	}
 
-	public IssueWorklog getWorklog() throws JSONException {
+	public IssueWorklog getWorklogHandler() throws JSONException {
 		return new IssueWorklog(id, jsonResponse);
 	}
 
@@ -123,7 +144,7 @@ public class Issue extends JiraRestCore {
 		}
 	}
 
-	public Commit getCommits() throws JSONException {
+	public Commit getCommitHandler() throws JSONException {
 		Review.setJsonResponse(jsonResponse);
 		return new Commit(this.getGenerateId(), id);
 	}

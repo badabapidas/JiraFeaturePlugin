@@ -10,7 +10,16 @@ import com.sag.jira.core.component.User;
 
 public class JiraRestClient extends JiraRestCore {
 
-	public JiraRestClient() {
+	private static JiraRestClient INSTANCE = null;
+
+	public static JiraRestClient getInstance() {
+		if (INSTANCE == null) {
+			INSTANCE = new JiraRestClient();
+		}
+		return INSTANCE;
+	}
+
+	private JiraRestClient() {
 	}
 
 	public Component getComponent(final String id) {

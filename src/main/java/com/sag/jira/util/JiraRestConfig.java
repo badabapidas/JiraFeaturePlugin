@@ -102,7 +102,12 @@ public final class JiraRestConfig {
 		public static final String ISSUES = "issues";
 		public static final String TOTAL = "total";
 		public static final String MAXRESULTS = "maxResults";
+		public static final String SUBTASKS = "subtasks";
 		public static final String SUBTASK = "subtask";
+		public static final String ISSUELINKS = "issuelinks";
+		public static final String TYPE = "type";
+		public static final String INWARD = "inward";
+		public static final String INWARD_ISSUE = "inwardIssue";
 	}
 
 	public static final class Label {

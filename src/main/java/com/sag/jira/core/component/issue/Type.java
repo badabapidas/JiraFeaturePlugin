@@ -18,7 +18,7 @@ public class Type extends IssueRoot {
 		return fetchAndValidateResponse(JiraRestConfig.Common.NAME);
 	}
 
-	public boolean isSubtasksAvailable() {
+	public boolean isASubtask() {
 		return Boolean.parseBoolean(fetchAndValidateResponse(JiraRestConfig.Issue.SUBTASK));
 	}
 

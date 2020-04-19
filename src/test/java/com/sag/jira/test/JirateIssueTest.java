@@ -1,70 +1,61 @@
 package com.sag.jira.test;
 
-import java.util.Iterator;
-import java.util.Set;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.core.JiraRestClient;
-import com.sag.jira.core.component.Commit;
-import com.sag.jira.core.component.Component;
 import com.sag.jira.core.component.Issue;
-import com.sag.jira.core.component.Project;
-import com.sag.jira.core.component.SearchJQL;
-import com.sag.jira.core.component.User;
-import com.sag.jira.core.component.issue.Assignee;
-import com.sag.jira.core.component.issue.Comment;
-import com.sag.jira.core.component.issue.FixVersion;
 import com.sag.jira.core.component.issue.IssueWorklog;
-import com.sag.jira.core.component.issue.Label;
-import com.sag.jira.core.component.issue.Priority;
-import com.sag.jira.core.component.issue.Reporter;
-import com.sag.jira.core.component.issue.Resolution;
-import com.sag.jira.core.component.issue.Status;
-import com.sag.jira.core.component.issue.TimeTracker;
-import com.sag.jira.core.component.issue.Type;
-import com.sag.jira.core.component.issue.Watcher;
-import com.sag.jira.core.obj.Worklog;
 import com.sag.jira.util.DumpResponse;
-import com.sag.jira.util.PropertyUtil;
+import com.sag.jira.util.JiraRestConfig;
 
 public class JirateIssueTest {
 
 	public static void main(String[] args) {
 		String filePath = "Response.txt";
 		DumpResponse write = new DumpResponse(filePath);
-		JiraRestClient jira = new JiraRestClient();
+		localDebug();
+//		JiraRestClient jira = JiraRestClient.getInstance();
 
 		try {
 
 			// PROJECT
-			write.dump("***  Project Details:");
-			Project project = jira.getProject(PropertyUtil.getJiraProjectId());
-			write.dump("Project Name: " + project.getName());
-			write.dump("Project Description: " + project.getDescription());
-			write.dump("\n\n");
+//			write.dump("***  Project Details:");
+//			Project project = jira.getProject(PropertyUtil.getJiraProjectId());
+//			write.dump("Project Name: " + project.getName());
+//			write.dump("Project Description: " + project.getDescription());
+//			write.dump("\n\n");
 
 			// Feature details
 			write.dump("***  Feature Details:");
-			Issue issue = new Issue("UHM-1466");// UHM-674
+			Issue issue = new Issue("CLTF-636");// UHM-674, UHM-1466, CLTF-636
 			write.dump("Feature key: " + issue.getKey());
-			write.dump("Feature Title: " + issue.getSummary());
-			write.dump("Feature GenerateId: " + issue.getGenerateId());
-			write.dump("Feature Description: " + issue.getDescription());
-			write.dump("\n\n");
+			write.dump("issue type:" + issue.getTypeHander().getIssueType());
+			write.dump("Is it a subtask?:" + issue.getTypeHander().isASubtask());
+//			write.dump("Feature Title: " + issue.getSummary());
+//			write.dump("Feature GenerateId: " + issue.getGenerateId());
+//			write.dump("Feature Description: " + issue.getDescription());
+//			write.dump("\n\n");
 
 			// ISSUE Commit
-			write.dump("----------- Commit --------------");
-			Commit commit = issue.getCommits();
-			write.dump("commitDone?: " + commit.isCommitDone());
-			write.dump("Total lines added: " + commit.getTotalNoOfLinesAdded());
-			write.dump("Total lines Removed: " + commit.getTotalNoOfLinesRemoved());
+//			write.dump("----------- Commit --------------");
+//			Commit commit = issue.getCommits();
+//			write.dump("commitDone?: " + commit.isCommitDone());
+//			write.dump("Total lines added: " + commit.getTotalNoOfLinesAdded());
+//			write.dump("Total lines Removed: " + commit.getTotalNoOfLinesRemoved());
 //			write.dump("Total Review Comments: " + commit.getTotalReviewCommentCounts());
-			write.dump("Review Response:" + commit.getReviewResponseMetrics());
+//			write.dump("Review Response:" + commit.getReviewResponseMetrics());
 
 //			write.dump("ireviewUrl: " + commit.getIReviewUrlForRecentCommit());
 //			write.dump("isReviewDone: " + commit.isReviewDoneForRecentCommit());
 //			write.dump("changeLogURL: " + commit.getRecentCommitId());
 //			write.dump("commitId: " + commit.getRecentCommitId());
-			write.dump("\n\n");
+//			write.dump("\n\n");
 
 //			String jql = "assignee = bada AND resolution = Unresolved order by updated DESC";
 //			SearchJQL searchJql = jira.searchJql(jql);
@@ -160,9 +151,9 @@ public class JirateIssueTest {
 //
 //			// ISSUE Worklog
 //			write.dump("----------- Worklog --------------");
-//			IssueWorklog worklog = issue.getWorklog();
-//			// worklog.displayAllLogWorks();
-//			write.dump("total: " + worklog.totalTimeSpent());
+			IssueWorklog worklog = issue.getWorklogHandler();
+			// worklog.displayAllLogWorks();
+			write.dump("total: " + worklog.totalTimeSpent());
 //			write.dump("count: " + worklog.getTotalWorklogCount());
 //			// worklog.getWhoWorkLogged();
 //			write.dump("worklog for bada:" + worklog.getWorkLogFor("bada"));
@@ -221,5 +212,41 @@ public class JirateIssueTest {
 			write.close();
 			System.out.println("Output redirected to " + filePath);
 		}
+	}
+
+	private static void localDebug() {
+		try {
+			JSONObject jsonObject = readLocalResponse();
+			JSONObject fieldObject = jsonObject.optJSONObject(JiraRestConfig.Issue.FILEDS);
+			JSONObject optJSONObject = fieldObject.optJSONObject("subtasks");
+			JSONArray optJSONArray = fieldObject.optJSONArray("subtasks");
+			System.out.println();
+		} catch (JSONException e1) {
+		}
+	}
+
+	public static JSONObject readLocalResponse() throws JSONException {
+		String response = readFile("/UHM-1466.json").trim();
+		return new JSONObject(response);
+	}
+
+	private static String readFile(String filename) {
+		String result = "";
+		try {
+
+			InputStream propStream = JiraRestClient.class.getResourceAsStream(filename);
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(propStream));
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+			while (line != null) {
+				sb.append(line);
+				line = br.readLine();
+			}
+			result = sb.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
