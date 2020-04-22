@@ -6,7 +6,7 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class Component extends IssueRoot {
+public class Component extends iTracRoot {
 	private JSONArray componentArray;
 
 	public Component(String issueId, JSONObject jsonObjectForIssue) throws JSONException {

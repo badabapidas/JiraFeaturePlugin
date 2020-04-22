@@ -10,7 +10,7 @@ import org.codehaus.jettison.json.JSONObject;
 import com.sag.jira.core.obj.FixVersions;
 import com.sag.jira.util.JiraRestConfig;
 
-public class FixVersion extends IssueRoot {
+public class FixVersion extends iTracRoot {
 	private List<FixVersions> fixVersionList;
 
 	public FixVersion(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
@@ -34,7 +34,7 @@ public class FixVersion extends IssueRoot {
 				}
 			}
 		}
-		return fixversions.toString();
+		return fixversions.toString().isEmpty() ? JiraRestConfig.Common.NOT_AVAILABLE : fixversions.toString();
 	}
 
 	private void readFixVersions() throws JSONException {

@@ -21,15 +21,19 @@ public class WatcherParser extends JiraParser {
 	}
 
 	private void readWatchers() {
-		JSONArray watcherArray = jsonObject.optJSONArray(JiraRestConfig.Watcher.WATCHERS);
-		if (watcherArray != null) {
-			for (int i = 0; i < watcherArray.length(); i++) {
-				Watcher watcher = new Watcher();
-				JSONObject watcherJson = watcherArray.optJSONObject(i);
-				watcher.setAlias(watcherJson.optString(JiraRestConfig.Common.NAME));
-				watcher.setDisplayName(watcherJson.optString(JiraRestConfig.Watcher.DISPLAY_NAME));
-				watcher.setRestUrl(watcherJson.optString(JiraRestConfig.Common.SELF));
-				watcherList.add(watcher);
+		if (isValidJsonObject(jsonObject)) {
+			JSONArray watcherArray = jsonObject.optJSONArray(JiraRestConfig.Watcher.WATCHERS);
+			if (isValidJsonArray(watcherArray)) {
+				for (int i = 0; i < watcherArray.length(); i++) {
+					Watcher watcher = new Watcher();
+					JSONObject watcherJson = watcherArray.optJSONObject(i);
+					if (isValidJsonObject(watcherJson)) {
+						watcher.setAlias(watcherJson.optString(JiraRestConfig.Common.NAME));
+						watcher.setDisplayName(watcherJson.optString(JiraRestConfig.Watcher.DISPLAY_NAME));
+						watcher.setRestUrl(watcherJson.optString(JiraRestConfig.Common.SELF));
+						watcherList.add(watcher);
+					}
+				}
 			}
 		}
 	}

@@ -3,10 +3,8 @@ package com.sag.jira.core.component.parser;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.codehaus.jettison.json.JSONArray;
@@ -18,7 +16,7 @@ import com.sag.jira.core.obj.Commit.Files;
 import com.sag.jira.core.obj.Commit.Repo;
 import com.sag.jira.core.obj.Review;
 import com.sag.jira.core.obj.Review.Ireview;
-import com.sag.jira.core.response.ItracReviewResponseBuilder.Response;
+import com.sag.jira.core.response.ItracReviewResponseBuilder.ReviewResponse;
 import com.sag.jira.util.JiraRestConfig;
 import com.sun.jersey.api.client.ClientResponse;
 
@@ -30,7 +28,7 @@ public class CommitParser extends JiraParser {
 	private int totalReviewCommentCounts = 0;
 	private String issueGenerateId, itracId;
 	private Set<String> uniquIssueGenaratedIds = new HashSet();
-	private Response reviewMetrics;
+	private ReviewResponse reviewMetrics;
 
 	public CommitParser(ClientResponse response, String issueGenerateId, String itracId) throws JSONException {
 		this.issueGenerateId = issueGenerateId;
@@ -41,11 +39,13 @@ public class CommitParser extends JiraParser {
 
 	private void findAllCommitDetails() {
 		allRepo = new ArrayList<>();
-		JSONArray details = jsonObject.optJSONArray(JiraRestConfig.Commit.DETAIL);
-		if (isValidJsonArray(details)) {
-			for (int i = 0; i < details.length(); i++) {
-				JSONObject detail = details.optJSONObject(i);
-				findRepositoriesDetails(detail);
+		if (isValidJsonObject(jsonObject)) {
+			JSONArray details = jsonObject.optJSONArray(JiraRestConfig.Commit.DETAIL);
+			if (isValidJsonArray(details)) {
+				for (int i = 0; i < details.length(); i++) {
+					JSONObject detail = details.optJSONObject(i);
+					findRepositoriesDetails(detail);
+				}
 			}
 		}
 	}
@@ -252,12 +252,12 @@ public class CommitParser extends JiraParser {
 		return totalNoOfLinesRemoved;
 	}
 
-	public int getTotalReviewComments() {
+	public int getTotalReviewCommentsCounts() {
 		return totalReviewCommentCounts;
 	}
 
-	public Response getReviewMetrics() {
-		return reviewMetrics;
+	public ReviewResponse getReviewMetrics() {
+		return (reviewMetrics != null) ? reviewMetrics : ReviewResponse.getDefaultResponse();
 	}
 
 }

@@ -14,26 +14,26 @@ import org.slf4j.LoggerFactory;
 import com.sag.jira.core.obj.Comment;
 import com.sag.jira.util.JiraRestConfig;
 
-public class CommentParser {
+public class CommentParser extends JiraParser {
 	private List<Comment> allCommments = new ArrayList<>();
 	protected final Logger log = LoggerFactory.getLogger(getClass());
 
 	public CommentParser(JSONObject jsonObject) throws JSONException {
-		JSONArray allComments = jsonObject.optJSONArray(JiraRestConfig.Comment.COMMENT);
-		parseJsonArrayForComments(allComments);
+		if (isValidJsonObject(jsonObject)) {
+			JSONArray allComments = jsonObject.optJSONArray(JiraRestConfig.Comment.COMMENT);
+			parseJsonArrayForComments(allComments);
+		}
 	}
 
 	private void parseJsonArrayForComments(JSONArray allComments) {
-		if (allComments != null) {
+		if (isValidJsonArray(allComments)) {
 			for (int i = 0; i < allComments.length(); i++) {
 				Comment comment = new Comment();
 				JSONObject commentJson = allComments.optJSONObject(i);
 				comment.setComment(commentJson.optString(JiraRestConfig.Commit.BODY));
 				comment.setCreateDate(commentJson.optString(JiraRestConfig.Commit.CREATED));
-
 				JSONObject author = commentJson.optJSONObject(JiraRestConfig.Commit.AUTHOR);
 				comment.setAlias(author.optString(JiraRestConfig.Common.NAME));
-
 				allCommments.add(comment);
 			}
 		}

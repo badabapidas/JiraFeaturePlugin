@@ -54,8 +54,8 @@ public class Project extends JiraRestCore {
 		return parser.getName();
 	}
 
-	public Issue getIssue(String id) {
-		return new Issue(id);
+	public iTrac getIssue(String id) {
+		return new iTrac(id);
 	}
 
 	public String getDescription() {

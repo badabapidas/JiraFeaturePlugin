@@ -5,13 +5,12 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class Resolution extends IssueRoot {
+public class Resolution extends iTracRoot {
 
 	public Resolution(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
 		try {
 			initialized(issueId, jsonObjectForIssue, JiraRestConfig.ISSUE_RESOLUTION_REST_PATH);
 		} catch (JSONException e) {
-			throw new JSONException("Resolution not found!");
 		}
 	}
 

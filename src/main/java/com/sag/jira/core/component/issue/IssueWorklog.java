@@ -15,7 +15,7 @@ import com.sag.jira.core.obj.Worklog;
 import com.sag.jira.util.JiraRestConfig;
 import com.sag.jira.util.JiraUtils;
 
-public class IssueWorklog extends IssueRoot {
+public class IssueWorklog extends iTracRoot {
 	private List<Worklog> allWorkLogs;
 
 	public IssueWorklog(final String issueId, final JSONObject jsonObjectForIssue) throws JSONException {
@@ -24,11 +24,10 @@ public class IssueWorklog extends IssueRoot {
 			final JSONArray allWorklogsInArray = jsonObject.optJSONArray((JiraRestConfig.Worklog.WORKLOGS));
 			readAllWorkLogs(allWorklogsInArray);
 		} catch (final JSONException e) {
-			throw new JSONException("Worklog not found!");
 		}
 	}
 
-	public void displayAllLogWorks() throws NumberFormatException, ParseException {
+	public void displayAllLogWorks() {
 		if (allWorkLogs != null) {
 			for (final Worklog worklogs : allWorkLogs) {
 				log.info("[" + worklogs.getCreateDate() + "] " + worklogs.getAlias() + " spent <"
@@ -77,6 +76,16 @@ public class IssueWorklog extends IssueRoot {
 
 		}
 		return JiraRestConfig.DEFAULT_TIME_FORMAT;
+	}
+
+	public String getTotalTimeSpent() {
+		int timeInSeconds = 0;
+		if (allWorkLogs != null) {
+			for (final Worklog worklogs : allWorkLogs) {
+				timeInSeconds += Integer.parseInt(worklogs.getTimeSpentSeconds());
+			}
+		}
+		return findTotalTime(timeInSeconds);
 	}
 
 	public int getTotalWorklogCount() {

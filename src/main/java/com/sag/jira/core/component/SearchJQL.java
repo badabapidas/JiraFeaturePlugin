@@ -86,7 +86,7 @@ public class SearchJQL extends JiraRestCore {
 		return Integer.parseInt(parser.getMaxSearchCount());
 	}
 
-	public Set<Issue> getSearchResults() {
+	public Set<iTrac> getSearchResults() {
 		return parser.getAllIssues();
 	}
 

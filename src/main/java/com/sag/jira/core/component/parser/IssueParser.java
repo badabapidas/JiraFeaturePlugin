@@ -7,19 +7,19 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
-import com.sag.jira.core.component.Issue;
+import com.sag.jira.core.component.iTrac;
 import com.sag.jira.util.JiraRestConfig;
 import com.sun.jersey.api.client.ClientResponse;
 
 public class IssueParser extends JiraParser {
 
-	private static final String IS_PARENT_FEATURE_OF = "is parent Feature of";
+	private final String IS_PARENT_FEATURE_OF = "is parent Feature of";
 
 	public IssueParser(ClientResponse response) throws JSONException {
 		parseResponse(response);
 	}
 
-	public Set<Issue> getAllSubtasks() {
+	public Set<iTrac> getAllSubtasks() {
 		if (isValidJsonObject(jsonObject)) {
 			JSONObject fieldObject = jsonObject.optJSONObject(JiraRestConfig.Issue.FILEDS);
 			if (isValidJsonObject(fieldObject)) {
@@ -32,7 +32,7 @@ public class IssueParser extends JiraParser {
 		return new HashSet();
 	}
 
-	public Set<Issue> getAllLInkedIssues() {
+	public Set<iTrac> getAllLInkedIssues() {
 		if (isValidJsonObject(jsonObject)) {
 			JSONObject fieldObject = jsonObject.optJSONObject(JiraRestConfig.Issue.FILEDS);
 			if (isValidJsonObject(fieldObject)) {
@@ -45,8 +45,8 @@ public class IssueParser extends JiraParser {
 		return new HashSet();
 	}
 
-	private Set<Issue> parseLinkedIssues(JSONArray issues) {
-		Set<Issue> linkedIssues = new HashSet<>();
+	private Set<iTrac> parseLinkedIssues(JSONArray issues) {
+		Set<iTrac> linkedIssues = new HashSet<>();
 		for (int i = 0; i < issues.length(); i++) {
 			JSONObject issue = issues.optJSONObject(i);
 			if (isValidJsonObject(issue)) {
@@ -57,7 +57,7 @@ public class IssueParser extends JiraParser {
 						JSONObject inwardIssues = issue.optJSONObject(JiraRestConfig.Issue.INWARD_ISSUE);
 						if (isValidJsonObject(inwardIssues)) {
 							String itracId = inwardIssues.optString(JiraRestConfig.Issue.KEY);
-							linkedIssues.add(new Issue(itracId));
+							linkedIssues.add(new iTrac(itracId));
 						}
 					}
 				}
@@ -66,13 +66,13 @@ public class IssueParser extends JiraParser {
 		return linkedIssues;
 	}
 
-	private Set<Issue> parseSubtasks(JSONArray subtasks) {
-		Set<Issue> subtasksList = new HashSet<>();
+	private Set<iTrac> parseSubtasks(JSONArray subtasks) {
+		Set<iTrac> subtasksList = new HashSet<>();
 		for (int i = 0; i < subtasks.length(); i++) {
 			JSONObject subtask = subtasks.optJSONObject(i);
 			if (isValidJsonObject(subtask)) {
 				String itracId = subtask.optString("key");
-				subtasksList.add(new Issue(itracId));
+				subtasksList.add(new iTrac(itracId));
 			}
 		}
 		return subtasksList;

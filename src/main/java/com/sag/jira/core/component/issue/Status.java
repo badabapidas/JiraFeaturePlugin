@@ -5,13 +5,12 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class Status extends IssueRoot {
+public class Status extends iTracRoot {
 
 	public Status(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
 		try {
 			initialized(issueId, jsonObjectForIssue, JiraRestConfig.ISSUE_STATUS_REST_PATH);
 		} catch (JSONException e) {
-			throw new JSONException("Status not found!");
 		}
 	}
 

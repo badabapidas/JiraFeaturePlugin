@@ -5,14 +5,13 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class Reporter extends IssueRoot {
+public class Reporter extends iTracRoot {
 
 	public Reporter(String id, JSONObject jsonObjectForIssue) throws JSONException {
 
 		try {
 			initialized(id, jsonObjectForIssue, JiraRestConfig.ISSUE_REPORTER_REST_PATH);
 		} catch (JSONException e) {
-			throw new JSONException("Reporter not found!");
 		}
 	}
 

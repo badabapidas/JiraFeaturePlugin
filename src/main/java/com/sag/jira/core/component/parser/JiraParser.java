@@ -23,7 +23,7 @@ public abstract class JiraParser {
 	}
 
 	public String fetchAndValidateResponse(String valueToFetech) {
-		if (jsonObject != null && jsonObject.length() > 0)
+		if (isValidJsonObject(jsonObject))
 			return jsonObject.optString(valueToFetech);
 		return "";
 	}
@@ -37,7 +37,7 @@ public abstract class JiraParser {
 	}
 
 	public String fetchAndValidateResponse(String valueToFetech, JSONObject jsonObject) {
-		if (jsonObject != null && jsonObject.length() > 0)
+		if (isValidJsonObject(jsonObject))
 			return jsonObject.optString(valueToFetech);
 		return JiraRestConfig.Common.EMPTY;
 	}

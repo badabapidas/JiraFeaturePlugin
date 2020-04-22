@@ -8,7 +8,7 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.core.response.ItracReviewResponseBuilder;
-import com.sag.jira.core.response.ItracReviewResponseBuilder.Response;
+import com.sag.jira.core.response.ItracReviewResponseBuilder.ReviewResponse;
 import com.sag.jira.core.response.ResponseBuilder;
 import com.sag.jira.util.JiraRestConfig;
 import com.sun.jersey.api.client.ClientResponse;
@@ -17,7 +17,7 @@ public class ReviewParser extends JiraParser {
 
 //	private Map<String, Integer> reviewCommitCountHistory = new HashMap<>();
 	private int reviewCommentCounts = 0;
-	private Response response = null;
+	private ReviewResponse response = null;
 	private String itracId = null;
 	private Map<String, Map<String, Object>> allReviewHistory = new HashMap<>();
 
@@ -25,8 +25,10 @@ public class ReviewParser extends JiraParser {
 		this.itracId = itracId;
 		this.response = null;
 		parseResponse(response);
-		findReviewDetails();
-		populateResponse();
+		if (isValidJsonObject(jsonObject)) {
+			findReviewDetails();
+			populateResponse();
+		}
 	}
 
 	private void populateResponse() {
@@ -37,7 +39,7 @@ public class ReviewParser extends JiraParser {
 
 	private void findReviewDetails() {
 		JSONArray details = jsonObject.optJSONArray(JiraRestConfig.Review.DETAIL);
-		if (details != null) {
+		if (isValidJsonArray(details)) {
 			for (int i = 0; i < details.length(); i++) {
 				JSONObject detail = details.optJSONObject(i);
 				findReviews(detail);
@@ -47,13 +49,12 @@ public class ReviewParser extends JiraParser {
 
 	private void findReviews(JSONObject detail) {
 		JSONArray reviews = detail.optJSONArray(JiraRestConfig.Review.REVIEWS);
-		if (reviews != null) {
+		if (isValidJsonArray(reviews)) {
 			for (int i = 0; i < reviews.length(); i++) {
 				Map<String, Object> reviewDetails = new HashMap<>();
 				JSONObject review = reviews.optJSONObject(i);
 				String cr_id = review.optString(JiraRestConfig.Review.ID);
 				int reviewCount = review.optInt(JiraRestConfig.Review.COMMENT_COUNT);
-				String state = review.optString(JiraRestConfig.Review.STATE);
 				reviewCommentCounts += review.optInt(JiraRestConfig.Review.COMMENT_COUNT);
 
 				JSONArray reviewers = review.optJSONArray(JiraRestConfig.Review.REVIEWERS);
@@ -77,7 +78,7 @@ public class ReviewParser extends JiraParser {
 		}
 	}
 
-	public Response populateReviewResponse() {
+	public ReviewResponse populateReviewResponse() {
 		return response;
 	}
 

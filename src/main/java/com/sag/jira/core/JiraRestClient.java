@@ -2,8 +2,11 @@ package com.sag.jira.core;
 
 import javax.naming.AuthenticationException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.sag.jira.core.component.Component;
-import com.sag.jira.core.component.Issue;
+import com.sag.jira.core.component.iTrac;
 import com.sag.jira.core.component.Project;
 import com.sag.jira.core.component.SearchJQL;
 import com.sag.jira.core.component.User;
@@ -11,10 +14,12 @@ import com.sag.jira.core.component.User;
 public class JiraRestClient extends JiraRestCore {
 
 	private static JiraRestClient INSTANCE = null;
+	private static final Logger logger = LoggerFactory.getLogger(JiraRestClient.class);
 
 	public static JiraRestClient getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new JiraRestClient();
+			logger.debug("Jira rest client initiated");
 		}
 		return INSTANCE;
 	}
@@ -26,8 +31,8 @@ public class JiraRestClient extends JiraRestCore {
 		return new Component(id);
 	}
 
-	public Issue getIssue(final String id) {
-		return new Issue(id);
+	public iTrac getIssue(final String id) {
+		return new iTrac(id);
 	}
 
 	public Project getProject(final String id) throws AuthenticationException {

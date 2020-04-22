@@ -5,13 +5,12 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class Priority extends IssueRoot {
+public class Priority extends iTracRoot {
 
 	public Priority(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
 		try {
 			initialized(issueId, jsonObjectForIssue, JiraRestConfig.ISSUE_PRIORITY_REST_PATH);
 		} catch (JSONException e) {
-			throw new JSONException("Priority not found: " + e.getMessage());
 		}
 	}
 

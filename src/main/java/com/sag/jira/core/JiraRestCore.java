@@ -17,7 +17,7 @@ public class JiraRestCore extends BaseClient {
 
 	public static String getRestTargetUri() {
 		StringBuilder sb = new StringBuilder();
-		return sb.append(getBaseTargetUri()).append("/rest/api/").toString();
+		return sb.append(getBaseTargetUri()).append(JiraRestConfig.REST_API_ENDPOINT).toString();
 	}
 
 	protected String fetchAndValidateResponse(String valueToFetech, JSONObject issueResponse) {

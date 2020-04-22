@@ -3,15 +3,17 @@ package com.sag.jira.core.obj;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sag.jira.util.JiraRestConfig;
+
 public class Commit {
 
-	private String id = "";
-	private String message = "";
-	private String author = "";
+	private String id = JiraRestConfig.Common.EMPTY;
+	private String message = JiraRestConfig.Common.EMPTY;
+	private String author = JiraRestConfig.Common.EMPTY;
 	private int commitFileCount = 0;
-	private String commitDate = "";
-	private String commitIreviewUrl = "";
-	private String createReviewUrl = "";
+	private String commitDate = JiraRestConfig.Common.EMPTY;
+	private String commitIreviewUrl = JiraRestConfig.Common.EMPTY;
+	private String createReviewUrl = JiraRestConfig.Common.EMPTY;
 
 	private List<Review.Ireview> allIreviews = new ArrayList();
 	private List<Files> allFiles = new ArrayList<>();

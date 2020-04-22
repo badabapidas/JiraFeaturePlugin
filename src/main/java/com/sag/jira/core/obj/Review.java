@@ -9,7 +9,7 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.core.IReviewRestCore;
 import com.sag.jira.core.component.parser.ReviewParser;
-import com.sag.jira.core.response.ItracReviewResponseBuilder.Response;
+import com.sag.jira.core.response.ItracReviewResponseBuilder.ReviewResponse;
 import com.sag.jira.util.JiraRestConfig;
 
 public class Review extends IReviewRestCore {
@@ -22,7 +22,7 @@ public class Review extends IReviewRestCore {
 	private static JSONObject jsonResponse;
 	private ReviewParser parser;
 
-	public Response getReviewMetrics(String itracId) {
+	public ReviewResponse getReviewMetrics(String itracId) {
 		initialize(itracId);
 		return parser.populateReviewResponse();
 	}
@@ -39,12 +39,12 @@ public class Review extends IReviewRestCore {
 	}
 
 	public int getReviewCommentsCount(String itracId) {
-		Response reviewMetrics = getReviewMetrics(itracId);
+		ReviewResponse reviewMetrics = getReviewMetrics(itracId);
 		return (reviewMetrics != null) ? reviewMetrics.getTotalReviewCounts() : -1;
 	}
 
 	public Map<String, Map<String, Object>> getAllReviewMetrics(String itracId) {
-		Response reviewMetrics = getReviewMetrics(itracId);
+		ReviewResponse reviewMetrics = getReviewMetrics(itracId);
 		return (reviewMetrics != null) ? reviewMetrics.getAllReviewHistory()
 				: new HashMap<String, Map<String, Object>>();
 	}

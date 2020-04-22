@@ -5,12 +5,11 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class Type extends IssueRoot {
+public class Type extends iTracRoot {
 	public Type(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
 		try {
 			initialized(issueId, jsonObjectForIssue, JiraRestConfig.ISSUE_TYPE_REST_PATH);
 		} catch (JSONException e) {
-			throw new JSONException("Issue type not found!");
 		}
 	}
 

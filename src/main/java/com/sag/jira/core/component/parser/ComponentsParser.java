@@ -12,18 +12,18 @@ import com.sun.jersey.api.client.ClientResponse;
 
 public class ComponentsParser extends JiraParser {
 
-	JSONArray componentArray;
+	private JSONArray componentArray;
 
 	public ComponentsParser(ClientResponse response) throws JSONException {
 		parseResponse(response);
-		if (jsonObject != null) {
+		if (isValidJsonObject(jsonObject)) {
 			componentArray = jsonObject.optJSONArray(JiraRestConfig.Component.COMPONENTS);
 		}
 	}
 
 	public Map<String, String> getComponentsWithDescriptions() {
 		HashMap<String, String> components = new HashMap<>();
-		if (componentArray != null) {
+		if (isValidJsonArray(componentArray)) {
 			for (int i = 0; i < componentArray.length(); i++) {
 				JSONObject jsonObject;
 				try {
@@ -41,7 +41,7 @@ public class ComponentsParser extends JiraParser {
 
 	public String getComponents() {
 		StringBuilder components = new StringBuilder();
-		if (componentArray != null) {
+		if (isValidJsonArray(componentArray)) {
 			for (int i = 0; i < componentArray.length(); i++) {
 				JSONObject jsonObject;
 				try {

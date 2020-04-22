@@ -3,14 +3,18 @@ package com.sag.jira.test;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Map;
 
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.core.JiraRestClient;
-import com.sag.jira.core.component.Issue;
+import com.sag.jira.core.component.Commit;
+import com.sag.jira.core.component.iTrac;
 import com.sag.jira.core.component.issue.IssueWorklog;
+import com.sag.jira.core.response.ItracComitResponseBuilder;
+import com.sag.jira.core.response.ItracComitResponseBuilder.CommitResponse;
 import com.sag.jira.util.DumpResponse;
 import com.sag.jira.util.JiraRestConfig;
 
@@ -33,23 +37,36 @@ public class JirateIssueTest {
 
 			// Feature details
 			write.dump("***  Feature Details:");
-			Issue issue = new Issue("CLTF-636");// UHM-674, UHM-1466, CLTF-636
-			write.dump("Feature key: " + issue.getKey());
-			write.dump("issue type:" + issue.getTypeHander().getIssueType());
-			write.dump("Is it a subtask?:" + issue.getTypeHander().isASubtask());
+			iTrac issue = new iTrac("UHM-674");// UHM-674, UHM-1466, CLTF-636
+//			write.dump("Feature key: " + issue.getKey());
+//			write.dump("issue type: " + issue.getTypeHander().getIssueType());
+//			write.dump("Is it a subtask?: " + issue.getTypeHander().isASubtask());
+//			write.dump("Is subtask avaialble? " + issue.isSubtasksAvailable() + ", count: " + issue.getSubtasksCount());
+//			write.dump("Is there any linked itracs? " + issue.isLinkedItracsAvaiable() + ", count: "
+//					+ issue.getLinkedItracsCount());
+
 //			write.dump("Feature Title: " + issue.getSummary());
 //			write.dump("Feature GenerateId: " + issue.getGenerateId());
 //			write.dump("Feature Description: " + issue.getDescription());
-//			write.dump("\n\n");
+			write.dump("\n\n");
 
 			// ISSUE Commit
-//			write.dump("----------- Commit --------------");
-//			Commit commit = issue.getCommits();
+			write.dump("----------- Commit --------------");
+			Commit commit = issue.getCommitHandler();
 //			write.dump("commitDone?: " + commit.isCommitDone());
+//			Map<iTrac, CommitResponse> response = commit.getResponseMetircsBuilder();
+//			CommitResponse commitResponse = response.get(issue);
+//			write.dump("Commit response for " + issue.getKey());
+//			write.dump("Lines added:" + commitResponse.getTotalNoOfLinesAdded());
+//			write.dump("Lines removed:" + commitResponse.getTotalNoOfLinesRemoved());
+//			write.dump("Review Count:" + commitResponse.getTotalReviewCommentCounts());
+//			write.dump("Overall riveiw comment:" + commit.getTotalNoOfLinesAdded());
+//			write.dump("\n\n");
+
 //			write.dump("Total lines added: " + commit.getTotalNoOfLinesAdded());
 //			write.dump("Total lines Removed: " + commit.getTotalNoOfLinesRemoved());
 //			write.dump("Total Review Comments: " + commit.getTotalReviewCommentCounts());
-//			write.dump("Review Response:" + commit.getReviewResponseMetrics());
+//			write.dump("Review Response:" + commit.getReviewResponseMetrics().getStatus());
 
 //			write.dump("ireviewUrl: " + commit.getIReviewUrlForRecentCommit());
 //			write.dump("isReviewDone: " + commit.isReviewDoneForRecentCommit());
@@ -151,9 +168,9 @@ public class JirateIssueTest {
 //
 //			// ISSUE Worklog
 //			write.dump("----------- Worklog --------------");
-			IssueWorklog worklog = issue.getWorklogHandler();
+//			IssueWorklog worklog = issue.getWorklogHandler();
 			// worklog.displayAllLogWorks();
-			write.dump("total: " + worklog.totalTimeSpent());
+//			write.dump("total: " + worklog.totalTimeSpent());
 //			write.dump("count: " + worklog.getTotalWorklogCount());
 //			// worklog.getWhoWorkLogged();
 //			write.dump("worklog for bada:" + worklog.getWorkLogFor("bada"));

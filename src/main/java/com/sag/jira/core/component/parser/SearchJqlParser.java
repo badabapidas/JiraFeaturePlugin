@@ -9,13 +9,13 @@ import org.codehaus.jettison.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.sag.jira.core.component.Issue;
+import com.sag.jira.core.component.iTrac;
 import com.sag.jira.util.JiraRestConfig;
 import com.sun.jersey.api.client.ClientResponse;
 
 public class SearchJqlParser extends JiraParser {
 	protected final Logger log = LoggerFactory.getLogger(getClass());
-	private static Set<Issue> totalIssues = new HashSet<Issue>();
+	private static Set<iTrac> totalIssues = new HashSet<iTrac>();
 	private static boolean isReading = false;
 
 	public SearchJqlParser(ClientResponse response, boolean donotClear) throws JSONException {
@@ -27,12 +27,12 @@ public class SearchJqlParser extends JiraParser {
 	}
 
 	private void readJql() {
-		if (jsonObject != null && !isReading) {
+		if (isValidJsonObject(jsonObject) && !isReading) {
 			isReading = true;
 			JSONArray issueArrays = jsonObject.optJSONArray(JiraRestConfig.SearchJQL.ISSUES);
 			for (int i = 0; i < issueArrays.length(); i++) {
 				JSONObject issueJson = issueArrays.optJSONObject(i);
-				Issue issue = new Issue(issueJson.optString(JiraRestConfig.Issue.KEY));
+				iTrac issue = new iTrac(issueJson.optString(JiraRestConfig.Issue.KEY));
 				synchronized (issue) {
 					totalIssues.add(issue);
 					isReading = false;
@@ -41,14 +41,14 @@ public class SearchJqlParser extends JiraParser {
 		}
 	}
 
-	public Set<Issue> getAllIssues() {
+	public Set<iTrac> getAllIssues() {
 		return totalIssues;
 	}
 
 	public Set<String> getAllItracsById() {
 		Set<String> itracIds = new HashSet<String>();
 		if (totalIssues != null) {
-			for (Issue issue : totalIssues) {
+			for (iTrac issue : totalIssues) {
 				itracIds.add(issue.getKey());
 			}
 		}

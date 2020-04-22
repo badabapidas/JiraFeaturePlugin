@@ -30,6 +30,7 @@ public final class JiraRestConfig {
 	private static final String search_jql_rest_url = "2/search?jql=";
 	private static final String commit_rest_utl_pre = "/rest/dev-status/1.0/issue/detail?issueId=";
 	private static final String commit_rest_utl_post = "&applicationType=fecru&dataType=repository";
+	public static final String REST_API_ENDPOINT = "/rest/api/";
 
 	public static final String DEFAULT_TIME_FORMAT = "00:00:00:00";
 
@@ -207,6 +208,7 @@ public final class JiraRestConfig {
 		public static final String SELF = "self";
 		public static final String NAME = "name";
 		public static final String DESCRIPTION = "description";
+		public static final String NOT_AVAILABLE = "NA";
 	}
 
 }

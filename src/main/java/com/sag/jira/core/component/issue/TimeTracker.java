@@ -5,12 +5,11 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class TimeTracker extends IssueRoot {
+public class TimeTracker extends iTracRoot {
 	public TimeTracker(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
 		try {
 			initialized(issueId, jsonObjectForIssue, JiraRestConfig.ISSUE_TIME_TRACKER_REST_PATH);
 		} catch (JSONException e) {
-			throw new JSONException("Time Tracker not found!");
 		}
 	}
 

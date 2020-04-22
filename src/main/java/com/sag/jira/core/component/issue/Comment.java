@@ -8,7 +8,7 @@ import org.codehaus.jettison.json.JSONObject;
 import com.sag.jira.core.component.parser.CommentParser;
 import com.sag.jira.util.JiraRestConfig;
 
-public class Comment extends IssueRoot {
+public class Comment extends iTracRoot {
 	private CommentParser parser;
 
 	public Comment(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
@@ -16,7 +16,6 @@ public class Comment extends IssueRoot {
 			initialized(issueId, jsonObjectForIssue, JiraRestConfig.ISSUE_COMMENT_REST_PATH);
 			parser = new CommentParser(jsonObject);
 		} catch (JSONException e) {
-			throw new JSONException("Comment not found!");
 		}
 	}
 

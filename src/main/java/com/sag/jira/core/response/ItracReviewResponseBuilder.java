@@ -6,8 +6,10 @@ package com.sag.jira.core.response;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.sag.jira.core.response.ItracReviewResponseBuilder.ReviewResponse.STATUS;
+
 public class ItracReviewResponseBuilder {
-	protected Response response = new Response();
+	protected ReviewResponse response = ReviewResponse.getDefaultResponse();
 
 	public ItracReviewResponseBuilder setItracId(String itracId) {
 		response.itracId = itracId;
@@ -24,14 +26,25 @@ public class ItracReviewResponseBuilder {
 		return this;
 	}
 
-	public Response build() {
+	public ReviewResponse build() {
+		if (response.getAllReviewHistory().size() > 0) {
+			response.setStatus(STATUS.AVAILABLE);
+		}
 		return response;
 	}
 
-	public class Response {
+	public static class ReviewResponse {
+		enum STATUS {
+			AVAILABLE, NOT_AVAILABLE
+		}
+
 		protected String itracId;
 		protected int totalReviewCounts;
 		protected Map<String, Map<String, Object>> allReviewHistory = new HashMap<>();
+		protected STATUS default_status = STATUS.NOT_AVAILABLE;
+
+		public ReviewResponse() {
+		}
 
 		public String getItracId() {
 			return itracId;
@@ -49,11 +62,24 @@ public class ItracReviewResponseBuilder {
 			this.allReviewHistory = allReviewHistory;
 		}
 
+		public STATUS getStatus() {
+			return default_status;
+		}
+
+		public void setStatus(STATUS default_status) {
+			this.default_status = default_status;
+		}
+
 		@Override
 		public String toString() {
 			return "Response [itracId=" + itracId + ", totalReviewCounts=" + totalReviewCounts + ", allReviewHistory="
 					+ allReviewHistory + "]";
 		}
+
+		public static ReviewResponse getDefaultResponse() {
+			return new ReviewResponse();
+		}
+		
 
 	}
 }
