@@ -10,6 +10,8 @@ import java.util.Set;
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.sag.jira.core.obj.Commit;
 import com.sag.jira.core.obj.Commit.Files;
@@ -29,6 +31,8 @@ public class CommitParser extends JiraParser {
 	private String issueGenerateId, itracId;
 	private Set<String> uniquIssueGenaratedIds = new HashSet();
 	private ReviewResponse reviewMetrics;
+	private boolean commitAlreadyCaptured = false;
+	private final Logger logger = LoggerFactory.getLogger(CommitParser.class);
 
 	public CommitParser(ClientResponse response, String issueGenerateId, String itracId) throws JSONException {
 		this.issueGenerateId = issueGenerateId;
@@ -83,14 +87,18 @@ public class CommitParser extends JiraParser {
 					int commitFileCount = commitObj.optInt(JiraRestConfig.Commit.FILECOUNT);
 					if (commitFileCount > 0) {
 						Commit commit = new Commit();
-						commit.setCommitId(commitObj.optString(JiraRestConfig.Commit.ID));
-						commit.setCommitIreviewUrl(commitObj.optString(JiraRestConfig.Commit.URL));
-						commit.setCommitFileCounts(commitObj.optInt(JiraRestConfig.Commit.FILECOUNT));
-						commit.setCommitMessage(commitObj.optString(JiraRestConfig.Commit.MESSAGE));
-						updateAuthor(commitObj, commit);
-						updateChangeFileDetails(commitObj, commit);
-						updateCommitReviewDetails(commitObj, commit);
-						repo.addCommit(commit);
+						String commitId = commitObj.optString(JiraRestConfig.Commit.ID);
+						commitAlreadyCaptured = commit.isAlreadyCaptured(commitId);
+						if (!commitAlreadyCaptured) {
+							commit.setCommitId(commitId);
+							commit.setCommitIreviewUrl(commitObj.optString(JiraRestConfig.Commit.URL));
+							commit.setCommitFileCounts(commitObj.optInt(JiraRestConfig.Commit.FILECOUNT));
+							commit.setCommitMessage(commitObj.optString(JiraRestConfig.Commit.MESSAGE));
+							updateAuthor(commitObj, commit);
+							updateChangeFileDetails(commitObj, commit);
+							updateCommitReviewDetails(commitObj, commit);
+							repo.addCommit(commit);
+						}
 					}
 				}
 			}
@@ -144,14 +152,20 @@ public class CommitParser extends JiraParser {
 						for (int i = 0; i < reviews.length(); i++) {
 							JSONObject reviewObj = reviews.optJSONObject(i);
 							if (isValidJsonObject(reviewObj)) {
-								review = new Review();
-								review.setId(reviewObj.optString(JiraRestConfig.Review.ID));
-								review.setUrl(reviewObj.optString(JiraRestConfig.Review.URL));
-								review.setState(reviewObj.optString(JiraRestConfig.Review.STATE));
-								review.setTitle(reviewObj.optString(JiraRestConfig.Review.TITLE));
-								review.setIssueGenaratedId(issueGenerateId);
-								updateReviewCommentCounts(issueGenerateId, review);
-								ireviewDetails.addReview(review);
+								String reviewId = reviewObj.optString(JiraRestConfig.Review.ID);
+								if (!review.isAlreadyCaptured(reviewId)) {
+									// log.debug("Review added for " + reviewId);
+									review = new Review();
+									review.setId(reviewId);
+									review.setUrl(reviewObj.optString(JiraRestConfig.Review.URL));
+									review.setState(reviewObj.optString(JiraRestConfig.Review.STATE));
+									review.setTitle(reviewObj.optString(JiraRestConfig.Review.TITLE));
+									review.setIssueGenaratedId(issueGenerateId);
+									updateReviewCommentCounts(issueGenerateId, review);
+									ireviewDetails.addReview(review);
+								} else {
+									// log.debug("Review is already captured, so skipped " + reviewId);
+								}
 							}
 						}
 					}
@@ -190,6 +204,10 @@ public class CommitParser extends JiraParser {
 			}
 		}
 		return null;
+	}
+
+	public boolean isCommitIdAlreadyCaptured() {
+		return commitAlreadyCaptured;
 	}
 
 	public boolean isCommitDone() {

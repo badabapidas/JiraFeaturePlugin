@@ -1,7 +1,5 @@
 package com.sag.jira.core.component;
 
-import java.util.Map;
-
 import org.codehaus.jettison.json.JSONException;
 
 import com.sag.jira.core.JiraRestCore;
@@ -61,15 +59,21 @@ public class Commit extends JiraRestCore {
 	}
 
 	private void updateCommitMetricsForItrac(Commit c) {
+		boolean alreadyCaptured = parser.isCommitIdAlreadyCaptured();
 		int totalNoOfLinesRemoved = c.getTotalNoOfLinesRemovedP();
 		int totalNoOfLinesAdded = c.getTotalNoOfLinesAddedP();
 		int totalReviewCommentCounts = c.getTotalReviewCommentCountsP();
-		logger.debug(
-				iTrac.getKey() + ":" + " totalNoOfLinesRemoved: " + totalNoOfLinesRemoved + ", totalNoOfLinesAdded: "
-						+ totalNoOfLinesAdded + ", totalReviewCommentCounts:" + totalReviewCommentCounts);
-		commitResponse.setItrac(iTrac).addTotalNoOfLInesAdded(totalNoOfLinesAdded)
+		commitResponse.setItrac(iTrac, alreadyCaptured).addTotalNoOfLInesAdded(totalNoOfLinesAdded)
 				.addTotalNoOfLinesRemoved(totalNoOfLinesRemoved).addTotalReviewCommentCounts(totalReviewCommentCounts)
 				.build();
+		if (!alreadyCaptured) {
+			logger.debug(iTrac.getKey() + ":" + " totalNoOfLinesRemoved: " + totalNoOfLinesRemoved
+					+ ", totalNoOfLinesAdded: " + totalNoOfLinesAdded + ", totalReviewCommentCounts:"
+					+ totalReviewCommentCounts);
+		} else {
+			logger.debug(iTrac.getKey() + ":"
+					+ " totalNoOfLinesRemoved: Already Captured, totalNoOfLinesAdded: Already Captured, totalReviewCommentCounts: Already Captured");
+		}
 	}
 
 	public boolean addReviewTask(String issusId) {

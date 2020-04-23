@@ -1,7 +1,9 @@
 package com.sag.jira.core.obj;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.sag.jira.util.JiraRestConfig;
 
@@ -14,6 +16,7 @@ public class Commit {
 	private String commitDate = JiraRestConfig.Common.EMPTY;
 	private String commitIreviewUrl = JiraRestConfig.Common.EMPTY;
 	private String createReviewUrl = JiraRestConfig.Common.EMPTY;
+	private static Set<String> commitIds = new HashSet<>();
 
 	private List<Review.Ireview> allIreviews = new ArrayList();
 	private List<Files> allFiles = new ArrayList<>();
@@ -23,6 +26,7 @@ public class Commit {
 	}
 
 	public void setCommitId(String commitId) {
+		commitIds.add(commitId);
 		this.id = commitId;
 	}
 
@@ -165,6 +169,10 @@ public class Commit {
 			this.linesRemoved = linesRemoved;
 		}
 
+	}
+
+	public boolean isAlreadyCaptured(String commitId) {
+		return commitIds.contains(commitId);
 	}
 
 }

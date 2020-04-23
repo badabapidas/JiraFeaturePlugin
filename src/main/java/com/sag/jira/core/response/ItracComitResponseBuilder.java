@@ -16,24 +16,31 @@ public class ItracComitResponseBuilder {
 	protected static int totalNoOfLinesAdded = 0;
 	protected static int totalNoOfLinesRemoved = 0;
 	protected static int totalReviewCommentCounts = 0;
+	private boolean alreadyCaptured = false;
 	private iTrac itrac;
 	protected static Map<iTrac, CommitResponse> commitMetrics = new HashMap();
 
 	public ItracComitResponseBuilder addTotalNoOfLInesAdded(int numOfLines) {
 		response.setTotalNoOfLinesAdded(numOfLines);
-		totalNoOfLinesAdded += numOfLines;
+		if (!alreadyCaptured) {
+			totalNoOfLinesAdded += numOfLines;
+		}
 		return this;
 	}
 
 	public ItracComitResponseBuilder addTotalNoOfLinesRemoved(int numOfLines) {
 		response.setTotalNoOfLinesRemoved(numOfLines);
-		totalNoOfLinesRemoved += numOfLines;
+		if (!alreadyCaptured) {
+			totalNoOfLinesRemoved += numOfLines;
+		}
 		return this;
 	}
 
 	public ItracComitResponseBuilder addTotalReviewCommentCounts(int reviewCommentCounts) {
 		response.setTotalReviewCommentCounts(reviewCommentCounts);
-		totalReviewCommentCounts += reviewCommentCounts;
+		if (!alreadyCaptured) {
+			totalReviewCommentCounts += reviewCommentCounts;
+		}
 		return this;
 	}
 
@@ -70,14 +77,32 @@ public class ItracComitResponseBuilder {
 			response.setStatus(response.responseStatus.AVAILABLE);
 			commitMetrics.put(itrac, response);
 			response = new CommitResponse();
+			alreadyCaptured = false;
 		}
 	}
 
 	private ItracComitResponseBuilder() {
 	}
 
-	public ItracComitResponseBuilder setItrac(iTrac itrac) {
+	/**
+	 * Introducing new boolean value to avoid duplicacy. So if more then one itrac
+	 * has the same commit id, it does not make sense to count multiple times all
+	 * the commit metrics; so we are introducing this variable and the count
+	 * addition will be based on this value; so if a commit details not entered then
+	 * only it will enter and add those values or just entered the values it will
+	 * not add the metrics to the final values
+	 * 
+	 * Why we are entering? cause if any body will search for the response metrics
+	 * for this specific metrics it should show the data correctly. If we dont
+	 * entered it will show 0 which is not correct.
+	 * 
+	 * @param itrac
+	 * @param alreadyCaptured
+	 * @return
+	 */
+	public ItracComitResponseBuilder setItrac(iTrac itrac, boolean alreadyCaptured) {
 		this.itrac = itrac;
+		this.alreadyCaptured = alreadyCaptured;
 		return this;
 	}
 

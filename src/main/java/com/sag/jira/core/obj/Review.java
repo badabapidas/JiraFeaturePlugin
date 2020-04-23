@@ -2,8 +2,10 @@ package com.sag.jira.core.obj;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.codehaus.jettison.json.JSONObject;
 
@@ -19,6 +21,7 @@ public class Review extends IReviewRestCore {
 	private String state = JiraRestConfig.Common.EMPTY;
 	private String title = JiraRestConfig.Common.EMPTY;
 	private String issueGenaratedId = JiraRestConfig.Common.EMPTY;
+	private static Set<String> reviewIds = new HashSet<>();
 	private static JSONObject jsonResponse;
 	private ReviewParser parser;
 
@@ -54,6 +57,7 @@ public class Review extends IReviewRestCore {
 	}
 
 	public void setId(String id) {
+		reviewIds.add(id);
 		this.id = id;
 	}
 
@@ -91,6 +95,10 @@ public class Review extends IReviewRestCore {
 
 	public static void setJsonResponse(JSONObject jsonResponse) {
 		Review.jsonResponse = jsonResponse;
+	}
+
+	public boolean isAlreadyCaptured(String commitId) {
+		return reviewIds.contains(commitId);
 	}
 
 	public class Ireview {
