@@ -158,7 +158,7 @@ public class iTrac extends JiraRestCore {
 	}
 
 	public IssueWorklog getWorklogHandler() throws JSONException {
-		return new IssueWorklog(id, jsonResponse);
+		return new IssueWorklog(this, jsonResponse);
 	}
 
 	public void removeLabel(final String labelToRemove) {
@@ -172,5 +172,5 @@ public class iTrac extends JiraRestCore {
 		Review.setJsonResponse(jsonResponse);
 		return new Commit(this.getGenerateId(), this);
 	}
-	
+
 }

@@ -5,10 +5,13 @@ package com.sag.jira.core.response;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.sag.jira.core.component.iTrac;
-import com.sag.jira.core.component.issue.Status;
-import com.sag.jira.core.response.ItracReviewResponseBuilder.ReviewResponse.STATUS;
+import com.sag.jira.core.response.ItracWorkLogResponseBuilder.WorklogResponse;
 
 public class ItracComitResponseBuilder {
 	protected static ItracComitResponseBuilder INSTANCE = null;
@@ -19,6 +22,7 @@ public class ItracComitResponseBuilder {
 	private boolean alreadyCaptured = false;
 	private iTrac itrac;
 	protected static Map<iTrac, CommitResponse> commitMetrics = new HashMap();
+	private static final Logger logger = LoggerFactory.getLogger(ItracComitResponseBuilder.class);
 
 	public ItracComitResponseBuilder addTotalNoOfLInesAdded(int numOfLines) {
 		response.setTotalNoOfLinesAdded(numOfLines);
