@@ -2,6 +2,7 @@ package com.sag.jira.core.component.issue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
@@ -115,6 +116,10 @@ public class IssueWorklog extends iTracRoot {
 
 	public WorklogResponse getResponseForItrac(String itracId) {
 		return response.getResponseForItrac(itracId);
+	}
+
+	public Map<iTrac, WorklogResponse> getAllResponses() {
+		return response.getAllResponses();
 	}
 
 	public String getTotalTimeSpent() {

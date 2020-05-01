@@ -1,5 +1,7 @@
 package com.sag.jira.core.component;
 
+import java.util.Map;
+
 import org.codehaus.jettison.json.JSONException;
 
 import com.sag.jira.core.JiraRestCore;
@@ -127,6 +129,10 @@ public class Commit extends JiraRestCore {
 
 	public CommitResponse getResponseForItrac(String itracKey) {
 		return commitResponse.getResponseForItrac(itracKey);
+	}
+
+	public Map<iTrac, CommitResponse> getAllResponses() {
+		return commitResponse.getAllRespones();
 	}
 
 	public int getTotalNoOfLinesAdded() {

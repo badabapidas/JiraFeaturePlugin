@@ -34,6 +34,9 @@ public final class JiraRestConfig {
 
 	public static final String DEFAULT_TIME_FORMAT = "00:00:00:00";
 
+	public static final String OUTPUT_RESPONSE = "/responses/";
+	public static final String OUTPUT_METRICS = OUTPUT_RESPONSE + "metrics/";
+
 	// Rules
 	public static final String WORKLOG_REPORT_FILE_NAME = "WorkLogReport.html";
 	public static final String RULE_ESTIMATE_FOR_SPRINT = "SprintItracsEstimateResult";

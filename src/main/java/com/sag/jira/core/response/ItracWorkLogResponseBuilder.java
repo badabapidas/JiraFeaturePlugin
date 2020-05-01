@@ -71,6 +71,10 @@ public class ItracWorkLogResponseBuilder {
 		return new WorklogResponse();
 	}
 
+	public Map<iTrac, WorklogResponse> getAllResponses() {
+		return worklogMetrics;
+	}
+
 	public String getTotalTimeSpent() {
 		return response.findTotalTime(totalTimeSpent);
 	}

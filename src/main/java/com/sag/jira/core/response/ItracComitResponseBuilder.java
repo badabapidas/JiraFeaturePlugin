@@ -76,6 +76,10 @@ public class ItracComitResponseBuilder {
 		return new CommitResponse();
 	}
 
+	public Map<iTrac, CommitResponse> getAllRespones() {
+		return commitMetrics;
+	}
+
 	public void build() {
 		if (!commitMetrics.containsKey(itrac)) {
 			response.setStatus(response.responseStatus.AVAILABLE);
