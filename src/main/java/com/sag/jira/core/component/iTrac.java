@@ -22,6 +22,7 @@ import com.sag.jira.core.component.issue.Type;
 import com.sag.jira.core.component.issue.Watcher;
 import com.sag.jira.core.component.parser.IssueParser;
 import com.sag.jira.core.obj.Review;
+import com.sag.jira.exception.ITracNotFoundException;
 import com.sag.jira.util.JiraRestConfig;
 
 public class iTrac extends JiraRestCore {
@@ -31,13 +32,17 @@ public class iTrac extends JiraRestCore {
 	private Set<iTrac> subtasks = new HashSet<>();
 	private Set<iTrac> linkedIssues = new HashSet<>();
 
-	public iTrac(String id) {
+	public iTrac(String id) throws ITracNotFoundException {
 		this.id = id;
 		if (parser == null) {
 			try {
 				get(JiraRestConfig.getIssueUrl(id));
 				parser = new IssueParser(clientResponse);
 				jsonResponse = parser.getJsonResponse();
+				if (jsonResponse == null) {
+					throw new ITracNotFoundException("Not a valid Itrac Id");
+				}
+				System.out.println("Processing metrics for " + id + "...");
 				populateChildren();
 			} catch (JSONException e) {
 				logger.error("Error in Issue component " + e);
@@ -45,17 +50,17 @@ public class iTrac extends JiraRestCore {
 		}
 	}
 
-	private void populateChildren() {
+	private void populateChildren() throws ITracNotFoundException {
 		populateSubtasks();
 		populateLInkedItracs();
 	}
 
-	private void populateLInkedItracs() {
+	private void populateLInkedItracs() throws ITracNotFoundException {
 		linkedIssues = parser.getAllLInkedIssues();
 		logger.debug("Itrac:" + id + " Linked Issues <" + linkedIssues.size() + ">");
 	}
 
-	private void populateSubtasks() {
+	private void populateSubtasks() throws ITracNotFoundException {
 		subtasks = parser.getAllSubtasks();
 		logger.debug("Itrac:" + id + " Subtasks <" + subtasks.size() + ">");
 	}

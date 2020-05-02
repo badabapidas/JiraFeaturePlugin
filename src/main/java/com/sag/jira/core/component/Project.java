@@ -6,6 +6,7 @@ import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.core.JiraRestCore;
 import com.sag.jira.core.component.parser.ProjectParser;
+import com.sag.jira.exception.ITracNotFoundException;
 import com.sag.jira.util.JiraRestConfig;
 
 public class Project extends JiraRestCore {
@@ -54,7 +55,7 @@ public class Project extends JiraRestCore {
 		return parser.getName();
 	}
 
-	public iTrac getIssue(String id) {
+	public iTrac getIssue(String id) throws ITracNotFoundException {
 		return new iTrac(id);
 	}
 

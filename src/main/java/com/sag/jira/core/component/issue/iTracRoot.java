@@ -20,6 +20,10 @@ public abstract class iTracRoot {
 			this.jsonObject = jsonObjectForIssue.getJSONObject(JiraRestConfig.Issue.FILEDS);
 	}
 
+	public boolean isValidJsonObject(JSONObject jsonObj) {
+		return (jsonObj != null && jsonObj.length() > 0);
+	}
+
 	protected String fetchAndValidateResponse(String valueToFetech) {
 		String optString = null;
 		if (jsonObject != null) {

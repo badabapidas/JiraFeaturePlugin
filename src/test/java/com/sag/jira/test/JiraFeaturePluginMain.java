@@ -20,6 +20,7 @@ import com.sag.jira.core.component.issue.Type;
 import com.sag.jira.core.component.issue.Watcher;
 import com.sag.jira.core.response.ItracComitResponseBuilder.CommitResponse;
 import com.sag.jira.core.response.ItracWorkLogResponseBuilder.WorklogResponse;
+import com.sag.jira.exception.ITracNotFoundException;
 
 public class JiraFeaturePluginMain {
 	private static final Logger logger = LoggerFactory.getLogger(JiraFeaturePluginMain.class);
@@ -27,7 +28,7 @@ public class JiraFeaturePluginMain {
 	private static final String ITRAC_ID_Metric = "UHM-1349";
 	private static final String newLine = "\n";
 
-	public static void main(String[] args) throws JSONException {
+	public static void main(String[] args) throws JSONException, ITracNotFoundException {
 		logger.info("Fetching details for " + ITRAC_ID);
 		final iTrac itrac = new iTrac(ITRAC_ID);
 //		iTrac itrac1 = new iTrac("UHM-1216");

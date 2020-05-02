@@ -8,6 +8,7 @@ import org.codehaus.jettison.json.JSONException;
 
 import com.sag.jira.core.JiraRestCore;
 import com.sag.jira.core.component.parser.SearchJqlParser;
+import com.sag.jira.exception.ITracNotFoundException;
 import com.sag.jira.util.JiraRestConfig;
 import com.sag.jira.util.JiraUtils;
 
@@ -35,23 +36,24 @@ public class SearchJQL extends JiraRestCore {
 				get(JiraRestConfig.getSearchJqlUrl(searchJql, startAt, maxResults));
 				try {
 					parser = new SearchJqlParser(clientResponse, true);
-				} catch (final JSONException e) {
+				} catch (final JSONException | ITracNotFoundException e) {
+					e.printStackTrace();
 				}
 			}
 		}
 	}
 
-	public SearchJQL(final String searchJql) {
+	public SearchJQL(final String searchJql) throws JSONException, ITracNotFoundException {
 		this.searchJql = searchJql;
 		logger.info("Search process has started, depending on the number of querie results, it might take time ...");
 		// To get the total count one request has to be made first so we are fetching
 		// only 2 records
 		get(JiraRestConfig.getSearchJqlUrl(searchJql, 0, 2));
-		try {
+//		try {
 			parser = new SearchJqlParser(clientResponse, false);
 			doThreadSearch();
-		} catch (final JSONException e) {
-		}
+//		} catch (final JSONException e) {
+//		}
 	}
 
 	private void doThreadSearch() {
@@ -106,7 +108,8 @@ public class SearchJQL extends JiraRestCore {
 			get(JiraRestConfig.getSearchJqlUrl(searchJql, startAt, total));
 			try {
 				parser = new SearchJqlParser(clientResponse, true);
-			} catch (final JSONException e) {
+			} catch (final JSONException | ITracNotFoundException e) {
+				e.printStackTrace();
 			}
 		}
 	}

@@ -24,9 +24,11 @@ public class IssueWorklog extends iTracRoot {
 		try {
 			this.iTrac = iTrac;
 			initialized(iTrac.getKey(), jsonObjectForIssue, JiraRestConfig.ISSUE_WORKLOG_REST_PATH);
-			final JSONArray allWorklogsInArray = jsonObject.optJSONArray((JiraRestConfig.Worklog.WORKLOGS));
-			readAllWorkLogs(allWorklogsInArray);
-			populateWorklogMetrics();
+			if (isValidJsonObject(jsonObject)) {
+				final JSONArray allWorklogsInArray = jsonObject.optJSONArray((JiraRestConfig.Worklog.WORKLOGS));
+				readAllWorkLogs(allWorklogsInArray);
+				populateWorklogMetrics();
+			}
 		} catch (final JSONException e) {
 		}
 	}

@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import com.sag.jira.core.component.iTrac;
 import com.sag.jira.core.obj.Worklog;
-import com.sag.jira.test.JiraFeaturePluginMain;
 import com.sag.jira.util.JiraRestConfig;
 import com.sag.jira.util.JiraUtils;
 

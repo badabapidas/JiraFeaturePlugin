@@ -60,7 +60,7 @@ public class BaseClient {
 			if (status == 200) {
 				clientResponse = response;
 			} else {
-				logger.error("Response status:" + status);
+//				logger.error("Response status:" + status);
 			}
 		} catch (MalformedURLException | URISyntaxException e) {
 			logger.error("Response status:" + e.getMessage());

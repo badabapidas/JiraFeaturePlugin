@@ -14,6 +14,7 @@ import com.sag.jira.core.component.issue.IssueWorklog;
 import com.sag.jira.core.component.issue.TimeTracker;
 import com.sag.jira.core.response.ItracComitResponseBuilder.CommitResponse;
 import com.sag.jira.core.response.ItracWorkLogResponseBuilder.WorklogResponse;
+import com.sag.jira.exception.ITracNotFoundException;
 import com.sag.jira.rule.report.ItracMetricsReportBuilder;
 import com.sag.jira.rule.report.ReportBuilder;
 import com.sag.jira.util.JiraRestConfig;
@@ -26,7 +27,7 @@ public class ItracReportSummaryAnalyzer extends RuleAnalyzer {
 	private IssueWorklog issueWorklogHandler = null;
 	private Commit commitHandler = null;
 
-	public ItracReportSummaryAnalyzer(String itracKey) throws JSONException {
+	public ItracReportSummaryAnalyzer(String itracKey) throws JSONException, ITracNotFoundException {
 		itrac = new iTrac(itracKey);
 		commitHandler = itrac.getCommitHandler();
 		allCommitResponses = commitHandler.getAllResponses();

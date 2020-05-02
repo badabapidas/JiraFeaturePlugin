@@ -8,7 +8,7 @@ public class ItracMetricsReportBuilder extends ReportBuilder {
 	private final static String TABLE_TAG_START = "<table border=\"2\" bordercolor=\"#000000\">";
 	private final static String TR_TAG_CUST_START = "<tr style=\"background:lightgrey\" class=\"center\">";
 	private final static String ANCHORE_CUST_TAG_START = "<a href=\"https://itrac.eur.ad.sag/browse/";
-	private final static String TD_CUST_ISSUE_TD_START = "<td style=\"background-color: antiquewhite;\">";
+	private final static String TD_CUST_ISSUE_TD_START = "<td style=\"background-color: antiquewhite;\" class=\"center\">";
 	private final static String CUSTOM_CSS = "<style>" + ".common{ border: 1px solid black; width: 200px;} "
 			+ ".broad{width: 20%;}" + ".center{text-align: center;}"
 			+ "#summary {font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;border-collapse: collapse;font-style: italic;}"
@@ -149,8 +149,8 @@ public class ItracMetricsReportBuilder extends ReportBuilder {
 	}
 
 	private void updateStatusColumn(String status) {
-		if (status.equalsIgnoreCase("Closed") || status.equalsIgnoreCase("Completed")
-				|| status.equalsIgnoreCase("Done")) {
+		if (status.equalsIgnoreCase("Closed") || status.equalsIgnoreCase("Completed") || status.equalsIgnoreCase("Done")
+				|| status.equalsIgnoreCase("Implemented")) {
 			builder.append("<td style=\"background-color: palegreen;\" class=\"center\">");
 		} else if (status.contentEquals("In Progress") || status.contentEquals("Implementing")
 				|| status.contentEquals("Open")) {

@@ -12,7 +12,9 @@ public class Component extends iTracRoot {
 	public Component(String issueId, JSONObject jsonObjectForIssue) throws JSONException {
 		try {
 			initialized(issueId, jsonObjectForIssue, JiraRestConfig.getIssueUrl(issueId));
-			componentArray = jsonObject.optJSONArray(JiraRestConfig.Component.COMPONENTS);
+			if (isValidJsonObject(jsonObject)) {
+				componentArray = jsonObject.optJSONArray(JiraRestConfig.Component.COMPONENTS);
+			}
 		} catch (JSONException e) {
 			throw new JSONException("Component not found! " + e.getMessage());
 		}

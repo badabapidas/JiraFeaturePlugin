@@ -8,6 +8,7 @@ import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
 import com.sag.jira.core.component.iTrac;
+import com.sag.jira.exception.ITracNotFoundException;
 import com.sag.jira.util.JiraRestConfig;
 import com.sun.jersey.api.client.ClientResponse;
 
@@ -19,7 +20,7 @@ public class IssueParser extends JiraParser {
 		parseResponse(response);
 	}
 
-	public Set<iTrac> getAllSubtasks() {
+	public Set<iTrac> getAllSubtasks() throws ITracNotFoundException {
 		if (isValidJsonObject(jsonObject)) {
 			JSONObject fieldObject = jsonObject.optJSONObject(JiraRestConfig.Issue.FILEDS);
 			if (isValidJsonObject(fieldObject)) {
@@ -32,7 +33,7 @@ public class IssueParser extends JiraParser {
 		return new HashSet();
 	}
 
-	public Set<iTrac> getAllLInkedIssues() {
+	public Set<iTrac> getAllLInkedIssues() throws ITracNotFoundException {
 		if (isValidJsonObject(jsonObject)) {
 			JSONObject fieldObject = jsonObject.optJSONObject(JiraRestConfig.Issue.FILEDS);
 			if (isValidJsonObject(fieldObject)) {
@@ -45,7 +46,7 @@ public class IssueParser extends JiraParser {
 		return new HashSet();
 	}
 
-	private Set<iTrac> parseLinkedIssues(JSONArray issues) {
+	private Set<iTrac> parseLinkedIssues(JSONArray issues) throws ITracNotFoundException {
 		Set<iTrac> linkedIssues = new HashSet<>();
 		for (int i = 0; i < issues.length(); i++) {
 			JSONObject issue = issues.optJSONObject(i);
@@ -66,7 +67,7 @@ public class IssueParser extends JiraParser {
 		return linkedIssues;
 	}
 
-	private Set<iTrac> parseSubtasks(JSONArray subtasks) {
+	private Set<iTrac> parseSubtasks(JSONArray subtasks) throws ITracNotFoundException {
 		Set<iTrac> subtasksList = new HashSet<>();
 		for (int i = 0; i < subtasks.length(); i++) {
 			JSONObject subtask = subtasks.optJSONObject(i);

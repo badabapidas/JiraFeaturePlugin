@@ -8,6 +8,16 @@ repositories {
 	mavenCentral()
 }
 
+jar {
+	manifest { attributes 'Main-Class': 'com.sag.jira.core.ExecuteTool' }
+
+	from {
+		configurations.compile.collect {
+			it.isDirectory() ? it : zipTree(it)
+		}
+	}
+}
+
 dependencies {
 
 	compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.6'

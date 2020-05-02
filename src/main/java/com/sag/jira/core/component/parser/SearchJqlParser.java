@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.sag.jira.core.component.iTrac;
+import com.sag.jira.exception.ITracNotFoundException;
 import com.sag.jira.util.JiraRestConfig;
 import com.sun.jersey.api.client.ClientResponse;
 
@@ -18,7 +19,7 @@ public class SearchJqlParser extends JiraParser {
 	private static Set<iTrac> totalIssues = new HashSet<iTrac>();
 	private static boolean isReading = false;
 
-	public SearchJqlParser(ClientResponse response, boolean donotClear) throws JSONException {
+	public SearchJqlParser(ClientResponse response, boolean donotClear) throws JSONException, ITracNotFoundException {
 		if (!donotClear) {
 			clearCache();
 		}
@@ -26,7 +27,7 @@ public class SearchJqlParser extends JiraParser {
 		readJql();
 	}
 
-	private void readJql() {
+	private void readJql() throws ITracNotFoundException {
 		if (isValidJsonObject(jsonObject) && !isReading) {
 			isReading = true;
 			JSONArray issueArrays = jsonObject.optJSONArray(JiraRestConfig.SearchJQL.ISSUES);
