@@ -39,6 +39,7 @@ public class SearchJqlParser extends JiraParser {
 					isReading = false;
 				}
 			}
+			isReading = false;
 		} else {
 			try {
 				log.debug("Thread is running so will try after 1 secs");

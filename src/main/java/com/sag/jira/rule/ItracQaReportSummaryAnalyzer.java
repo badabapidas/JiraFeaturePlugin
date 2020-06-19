@@ -81,7 +81,6 @@ public class ItracQaReportSummaryAnalyzer extends RuleAnalyzer {
 
 		for (Iterator iterator = itracs.iterator(); iterator.hasNext();) {
 			iTrac fetched_itrac = (iTrac) iterator.next();
-			System.out.println(fetched_itrac.getSeverityHandler().getStatus());
 			report.addRow(fetched_itrac.getKey(), fetched_itrac.getSummary(),
 					fetched_itrac.getTypeHander().getIssueType(), fetched_itrac.getLabelHandler().getLabels(),
 					fetched_itrac.getComponentsHandler().getComponents(),

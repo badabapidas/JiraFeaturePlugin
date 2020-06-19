@@ -54,6 +54,7 @@ public class SearchJQL extends JiraRestCore {
 				parser = new SearchJqlParser(clientResponse, false);
 				doThreadSearch();
 			} catch (final JSONException e) {
+				isSearchOnGoing = false;
 			}
 		}
 	}
@@ -88,9 +89,9 @@ public class SearchJQL extends JiraRestCore {
 				logger.info("Total time taken to perform the search :"
 						+ ((System.currentTimeMillis() - currentTimeMillis) / 1000) + " secs");
 				logger.info("Finished all threads for " + parser.getAllIssuesSize() + " results.");
-				isSearchOnGoing = false;
 			}
 		}
+		isSearchOnGoing = false;
 	}
 
 	public Set<String> getAllItracsById() {
