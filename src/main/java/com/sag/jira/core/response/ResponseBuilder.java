@@ -16,4 +16,8 @@ public class ResponseBuilder {
 	public static ItracWorkLogResponseBuilder getWorklogResponseBuilder() {
 		return ItracWorkLogResponseBuilder.getInstance();
 	}
+
+	public static ItracTraceabilityResponseBuilder getTraceabilityBuilde() {
+		return ItracTraceabilityResponseBuilder.getInstance();
+	}
 }

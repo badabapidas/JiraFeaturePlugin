@@ -16,6 +16,7 @@ import com.sag.jira.core.component.issue.Label;
 import com.sag.jira.core.component.issue.Priority;
 import com.sag.jira.core.component.issue.Reporter;
 import com.sag.jira.core.component.issue.Resolution;
+import com.sag.jira.core.component.issue.Severity;
 import com.sag.jira.core.component.issue.Status;
 import com.sag.jira.core.component.issue.TimeTracker;
 import com.sag.jira.core.component.issue.Type;
@@ -32,22 +33,49 @@ public class iTrac extends JiraRestCore {
 	private Set<iTrac> subtasks = new HashSet<>();
 	private Set<iTrac> linkedIssues = new HashSet<>();
 
-	public iTrac(String id) throws ITracNotFoundException {
-		this.id = id;
+	public iTrac(String id, boolean gotThroughChildren) throws ITracNotFoundException {
+		this.id = id.trim();
 		if (parser == null) {
 			try {
-				get(JiraRestConfig.getIssueUrl(id));
+				get(JiraRestConfig.getIssueUrl(this.id));
 				parser = new IssueParser(clientResponse);
 				jsonResponse = parser.getJsonResponse();
 				if (jsonResponse == null) {
 					throw new ITracNotFoundException("Not a valid Itrac Id");
 				}
 				System.out.println("Processing metrics for " + id + "...");
-				populateChildren();
+				if (gotThroughChildren) {
+					populateChildren();
+				}
 			} catch (JSONException e) {
 				logger.error("Error in Issue component " + e);
 			}
 		}
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		iTrac other = (iTrac) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
 	}
 
 	private void populateChildren() throws ITracNotFoundException {
@@ -138,6 +166,10 @@ public class iTrac extends JiraRestCore {
 		return new Priority(id, jsonResponse);
 	}
 
+	public Severity getSeverityHandler() throws JSONException {
+		return new Severity(id, jsonResponse);
+	}
+
 	public Project getProjectHandler() throws JSONException {
 		return new Project(id, jsonResponse);
 	}
@@ -176,6 +208,10 @@ public class iTrac extends JiraRestCore {
 	public Commit getCommitHandler() throws JSONException {
 		Review.setJsonResponse(jsonResponse);
 		return new Commit(this.getGenerateId(), this);
+	}
+
+	public Traceability getTraceabilityHandler() throws JSONException {
+		return new Traceability(this.getGenerateId(), this);
 	}
 
 }

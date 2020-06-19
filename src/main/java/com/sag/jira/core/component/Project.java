@@ -51,12 +51,12 @@ public class Project extends JiraRestCore {
 
 	public String getName() {
 		if (issueResponse != null)
-			return fetchAndValidateResponse(JiraRestConfig.Project.NAME, issueResponse);
+			return fetchAndValidateResponse(JiraRestConfig.Common.NAME, issueResponse);
 		return parser.getName();
 	}
 
 	public iTrac getIssue(String id) throws ITracNotFoundException {
-		return new iTrac(id);
+		return new iTrac(id, true);
 	}
 
 	public String getDescription() {

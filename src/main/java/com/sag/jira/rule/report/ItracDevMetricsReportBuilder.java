@@ -4,7 +4,13 @@ import java.util.Map;
 
 import com.sag.jira.util.JiraRestConfig;
 
-public class ItracMetricsReportBuilder extends ReportBuilder {
+public class ItracDevMetricsReportBuilder extends ReportBuilder {
+	private static final String TOTAL_WORKLOG_COUNTS = "Total Worklog Counts";
+	private static final String TOTAL_REVIEW_COMMENTS = "Total Review Comments";
+	private static final String TOTAL_LINES_REMOVED = "Total Lines Removed";
+	private static final String TOTAL_LINES_ADDED = "Total Lines Added";
+	private static final String TOTAL_TIME_SPENT = "Total Time Spent";
+
 	private final static String TABLE_TAG_START = "<table border=\"2\" bordercolor=\"#000000\">";
 	private final static String TR_TAG_CUST_START = "<tr style=\"background:lightgrey\" class=\"center\">";
 	private final static String ANCHORE_CUST_TAG_START = "<a href=\"https://itrac.eur.ad.sag/browse/";
@@ -24,44 +30,44 @@ public class ItracMetricsReportBuilder extends ReportBuilder {
 	protected final static String TD_TAG_SUMMARY_START = "<td style= \"text-align: center\";>";
 	protected final static String TD_TAG_NOT_AVAIALABLE_START = "<td style=\"color: red;\"  class=\"center\">";
 
-	protected ItracMetricsReportBuilder() {
+	protected ItracDevMetricsReportBuilder() {
 	}
 
 	public void addSummary(String totalTimeSpent, int totalLinesAdded, int totalLinesRemoved, int totalReviewComments,
 			int worklogCount) {
 
 		builder.append(CUSTOM_CSS);
-		builder.append(H1_TAG_START).append("Effort Metrics for ").append(ANCHORE_CUST_TAG_START).append(itrac.getKey())
+		builder.append(H1_TAG_START).append("Dev Effort Metrics for ").append(ANCHORE_CUST_TAG_START).append(itrac.getKey())
 				.append("\">").append(itrac.getKey()).append(ANCHOR_TAG_END).append(H1_TAG_END);
 
 		builder.append(HR_TAG);
 
 		builder.append("<table id=\"summary\">").append(TR_TAG_START);
-		builder.append(TD_TAG_START).append(BOLD_TAG_START).append("Total Time Spent").append(BOLD_TAG_END)
+		builder.append(TD_TAG_START).append(BOLD_TAG_START).append(TOTAL_TIME_SPENT).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 		builder.append(TD_TAG_SUMMARY_START).append(BOLD_TAG_START).append(totalTimeSpent).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 		builder.append(TR_TAG_END).append(TR_TAG_START);
 
-		builder.append(TD_TAG_START).append(BOLD_TAG_START).append("Total Lines Added").append(BOLD_TAG_END)
+		builder.append(TD_TAG_START).append(BOLD_TAG_START).append(TOTAL_LINES_ADDED).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 		builder.append(TD_TAG_SUMMARY_START).append(BOLD_TAG_START).append(totalLinesAdded).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 		builder.append(TR_TAG_END).append(TR_TAG_START);
 
-		builder.append(TD_TAG_START).append(BOLD_TAG_START).append("Total Lines Removed").append(BOLD_TAG_END)
+		builder.append(TD_TAG_START).append(BOLD_TAG_START).append(TOTAL_LINES_REMOVED).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 		builder.append(TD_TAG_SUMMARY_START).append(BOLD_TAG_START).append(totalLinesRemoved).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 
 		builder.append(TR_TAG_END).append(TR_TAG_START);
-		builder.append(TD_TAG_START).append(BOLD_TAG_START).append("Total Review Comments").append(BOLD_TAG_END)
+		builder.append(TD_TAG_START).append(BOLD_TAG_START).append(TOTAL_REVIEW_COMMENTS).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 		builder.append(TD_TAG_SUMMARY_START).append(BOLD_TAG_START).append(totalReviewComments).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 
 		builder.append(TR_TAG_END).append(TR_TAG_START);
-		builder.append(TD_TAG_START).append(BOLD_TAG_START).append("Total Worklog Counts").append(BOLD_TAG_END)
+		builder.append(TD_TAG_START).append(BOLD_TAG_START).append(TOTAL_WORKLOG_COUNTS).append(BOLD_TAG_END)
 				.append(TD_TAG_END);
 		builder.append(TD_TAG_SUMMARY_START).append(BOLD_TAG_START).append(worklogCount).append(BOLD_TAG_END)
 				.append(TD_TAG_END);

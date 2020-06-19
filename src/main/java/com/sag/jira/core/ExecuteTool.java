@@ -7,8 +7,6 @@ import java.text.ParseException;
 
 import org.codehaus.jettison.json.JSONException;
 
-import com.sag.jira.rule.JiraRuleRunner;
-
 public class ExecuteTool {
 	public static void main(String[] args) throws JSONException, ParseException, IOException {
 		System.out.println("Welcome to Jira Metrics Tool. This tool will help you to generate itrac effort metrics.\n");
@@ -23,7 +21,7 @@ public class ExecuteTool {
 					try {
 						System.out.println(
 								"Processing your request, depending on the number of child itracs it might take a while...please wait\n");
-						new JiraRuleRunner().executeRules(itracNum);
+//						new JiraRuleRunner().executeRules(itracNum);
 						resultFound = true;
 					} catch (Exception e) {
 						System.out.println("Incorrect itrac id, do you want to try again? (y/n)");

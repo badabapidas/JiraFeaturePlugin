@@ -33,11 +33,18 @@ public class SearchJqlParser extends JiraParser {
 			JSONArray issueArrays = jsonObject.optJSONArray(JiraRestConfig.SearchJQL.ISSUES);
 			for (int i = 0; i < issueArrays.length(); i++) {
 				JSONObject issueJson = issueArrays.optJSONObject(i);
-				iTrac issue = new iTrac(issueJson.optString(JiraRestConfig.Issue.KEY));
+				iTrac issue = new iTrac(issueJson.optString(JiraRestConfig.Issue.KEY), false);
 				synchronized (issue) {
 					totalIssues.add(issue);
 					isReading = false;
 				}
+			}
+		} else {
+			try {
+				log.debug("Thread is running so will try after 1 secs");
+				Thread.sleep(1000);
+				readJql();
+			} catch (InterruptedException e) {
 			}
 		}
 	}

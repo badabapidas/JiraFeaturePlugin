@@ -30,7 +30,7 @@ public class JiraFeaturePluginMain {
 
 	public static void main(String[] args) throws JSONException, ITracNotFoundException {
 		logger.info("Fetching details for " + ITRAC_ID);
-		final iTrac itrac = new iTrac(ITRAC_ID);
+		final iTrac itrac = new iTrac(ITRAC_ID, true);
 //		iTrac itrac1 = new iTrac("UHM-1216");
 //		iTrac itrac2 = new iTrac("UHM-1351");
 		logger.info("============================");

@@ -15,7 +15,7 @@ public class ProjectParser extends JiraParser {
 	}
 
 	public String getName() {
-		return fetchAndValidateResponse(JiraRestConfig.Project.NAME);
+		return fetchAndValidateResponse(JiraRestConfig.Common.NAME);
 	}
 
 	public String getDescription() {

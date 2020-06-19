@@ -34,7 +34,7 @@ public class JiraRestClient extends JiraRestCore {
 	}
 
 	public iTrac getIssue(final String id) throws ITracNotFoundException {
-		return new iTrac(id);
+		return new iTrac(id, true);
 	}
 
 	public Project getProject(final String id) throws AuthenticationException {

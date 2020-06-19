@@ -53,7 +53,7 @@ public class ReviewParser extends JiraParser {
 			for (int i = 0; i < reviews.length(); i++) {
 				Map<String, Object> reviewDetails = new HashMap<>();
 				JSONObject review = reviews.optJSONObject(i);
-				String cr_id = review.optString(JiraRestConfig.Review.ID);
+				String cr_id = review.optString(JiraRestConfig.Common.ID);
 				int reviewCount = review.optInt(JiraRestConfig.Review.COMMENT_COUNT);
 				reviewCommentCounts += review.optInt(JiraRestConfig.Review.COMMENT_COUNT);
 

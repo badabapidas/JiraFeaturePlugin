@@ -87,7 +87,7 @@ public class CommitParser extends JiraParser {
 					int commitFileCount = commitObj.optInt(JiraRestConfig.Commit.FILECOUNT);
 					if (commitFileCount > 0) {
 						Commit commit = new Commit();
-						String commitId = commitObj.optString(JiraRestConfig.Commit.ID);
+						String commitId = commitObj.optString(JiraRestConfig.Common.ID);
 						commitAlreadyCaptured = commit.isAlreadyCaptured(commitId);
 						if (!commitAlreadyCaptured) {
 							commit.setCommitId(commitId);
@@ -152,7 +152,7 @@ public class CommitParser extends JiraParser {
 						for (int i = 0; i < reviews.length(); i++) {
 							JSONObject reviewObj = reviews.optJSONObject(i);
 							if (isValidJsonObject(reviewObj)) {
-								String reviewId = reviewObj.optString(JiraRestConfig.Review.ID);
+								String reviewId = reviewObj.optString(JiraRestConfig.Common.ID);
 								if (!review.isAlreadyCaptured(reviewId)) {
 									// log.debug("Review added for " + reviewId);
 									review = new Review();

@@ -39,9 +39,16 @@ public class ReportBuilder {
 	protected final static String HEADER_KEY_WORKLOG_COUNT = "Worklog Counts";
 	protected final static String HEADER_KEY_TOTAL_TIME_SPENT = "Time Spent";
 	protected final static String HEADER_KEY_WHO_LOGGED = "Who logged";
+	protected final static String HEADER_KEY_ISSUE_PRIORITY = "Priority";
+	protected final static String HEADER_KEY_ISSUE_SEVERITY = "Severity";
+	protected final static String HEADER_KEY_ISSUE_LABELS = "Labels";
 
-	public static ItracMetricsReportBuilder getItracMetricBuilder() {
-		return new ItracMetricsReportBuilder();
+	public static ItracDevMetricsReportBuilder getItracDevMetricBuilder() {
+		return new ItracDevMetricsReportBuilder();
+	}
+
+	public static ItracQaMetricsReportBuilder getItracQaMetricBuilder() {
+		return new ItracQaMetricsReportBuilder();
 	}
 
 	public StringBuilder getBuilder() {

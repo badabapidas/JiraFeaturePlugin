@@ -58,7 +58,7 @@ public class IssueParser extends JiraParser {
 						JSONObject inwardIssues = issue.optJSONObject(JiraRestConfig.Issue.INWARD_ISSUE);
 						if (isValidJsonObject(inwardIssues)) {
 							String itracId = inwardIssues.optString(JiraRestConfig.Issue.KEY);
-							linkedIssues.add(new iTrac(itracId));
+							linkedIssues.add(new iTrac(itracId, true));
 						}
 					}
 				}
@@ -73,7 +73,7 @@ public class IssueParser extends JiraParser {
 			JSONObject subtask = subtasks.optJSONObject(i);
 			if (isValidJsonObject(subtask)) {
 				String itracId = subtask.optString("key");
-				subtasksList.add(new iTrac(itracId));
+				subtasksList.add(new iTrac(itracId, true));
 			}
 		}
 		return subtasksList;
@@ -110,7 +110,7 @@ public class IssueParser extends JiraParser {
 
 	public String getGenerateId() {
 		if (isValidJsonObject(jsonObject)) {
-			return jsonObject.optString(JiraRestConfig.Issue.ID);
+			return jsonObject.optString(JiraRestConfig.Common.ID);
 		}
 		return JiraRestConfig.Common.EMPTY;
 	}

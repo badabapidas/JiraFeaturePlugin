@@ -20,6 +20,7 @@ public class SearchJQL extends JiraRestCore {
 	private SearchJqlParser parser;
 	private int startAt = 2;
 	private final int maxResults = 10;
+	private static boolean isSearchOnGoing = false;
 
 	private class SearchRunnable implements Runnable {
 		private final String searchJql;
@@ -32,28 +33,39 @@ public class SearchJQL extends JiraRestCore {
 
 		@Override
 		public void run() {
-			if (parser == null) {
-				get(JiraRestConfig.getSearchJqlUrl(searchJql, startAt, maxResults));
-				try {
-					parser = new SearchJqlParser(clientResponse, true);
-				} catch (final JSONException | ITracNotFoundException e) {
-					e.printStackTrace();
-				}
+			get(JiraRestConfig.getSearchJqlUrl(searchJql, startAt, maxResults));
+			try {
+				parser = new SearchJqlParser(clientResponse, true);
+			} catch (final JSONException | ITracNotFoundException e) {
+				e.printStackTrace();
 			}
 		}
 	}
 
 	public SearchJQL(final String searchJql) throws JSONException, ITracNotFoundException {
 		this.searchJql = searchJql;
-		logger.info("Search process has started, depending on the number of querie results, it might take time ...");
-		// To get the total count one request has to be made first so we are fetching
-		// only 2 records
-		get(JiraRestConfig.getSearchJqlUrl(searchJql, 0, 2));
-//		try {
-			parser = new SearchJqlParser(clientResponse, false);
-			doThreadSearch();
-//		} catch (final JSONException e) {
-//		}
+
+		if (!isSearchOnGoing) {
+			isSearchOnGoing = true;
+			logger.debug(
+					"Search process has started, depending on the number of querie results, it might take time ...");
+			get(JiraRestConfig.getSearchJqlUrl(searchJql, 0, 2));
+			try {
+				parser = new SearchJqlParser(clientResponse, false);
+				doThreadSearch();
+			} catch (final JSONException e) {
+			}
+		}
+	}
+
+	private void doSingleThreadSearch() throws ITracNotFoundException {
+		final int total = getTotalSearchCount();
+		logger.info("Total search results found: " + total);
+		get(JiraRestConfig.getSearchJqlUrl(searchJql, 2, total));
+		try {
+			parser = new SearchJqlParser(clientResponse, true);
+		} catch (final JSONException e) {
+		}
 	}
 
 	private void doThreadSearch() {
@@ -76,6 +88,7 @@ public class SearchJQL extends JiraRestCore {
 				logger.info("Total time taken to perform the search :"
 						+ ((System.currentTimeMillis() - currentTimeMillis) / 1000) + " secs");
 				logger.info("Finished all threads for " + parser.getAllIssuesSize() + " results.");
+				isSearchOnGoing = false;
 			}
 		}
 	}
@@ -119,4 +132,9 @@ public class SearchJQL extends JiraRestCore {
 			startAt += maxResults;
 		}
 	}
+
+	public boolean isSearchOnGoing() {
+		return isSearchOnGoing;
+	}
+
 }

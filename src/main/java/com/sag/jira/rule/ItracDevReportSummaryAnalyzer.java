@@ -15,20 +15,20 @@ import com.sag.jira.core.component.issue.TimeTracker;
 import com.sag.jira.core.response.ItracComitResponseBuilder.CommitResponse;
 import com.sag.jira.core.response.ItracWorkLogResponseBuilder.WorklogResponse;
 import com.sag.jira.exception.ITracNotFoundException;
-import com.sag.jira.rule.report.ItracMetricsReportBuilder;
+import com.sag.jira.rule.report.ItracDevMetricsReportBuilder;
 import com.sag.jira.rule.report.ReportBuilder;
 import com.sag.jira.util.JiraRestConfig;
 
-public class ItracReportSummaryAnalyzer extends RuleAnalyzer {
+public class ItracDevReportSummaryAnalyzer extends RuleAnalyzer {
 
-	private ItracMetricsReportBuilder report = ReportBuilder.getItracMetricBuilder();
+	private ItracDevMetricsReportBuilder report = ReportBuilder.getItracDevMetricBuilder();
 	private iTrac itrac = null;
 	private Map<iTrac, CommitResponse> allCommitResponses = new HashMap<>();
 	private IssueWorklog issueWorklogHandler = null;
 	private Commit commitHandler = null;
 
-	public ItracReportSummaryAnalyzer(String itracKey) throws JSONException, ITracNotFoundException {
-		itrac = new iTrac(itracKey);
+	public ItracDevReportSummaryAnalyzer(String itracKey) throws JSONException, ITracNotFoundException {
+		itrac = new iTrac(itracKey, true);
 		commitHandler = itrac.getCommitHandler();
 		allCommitResponses = commitHandler.getAllResponses();
 		issueWorklogHandler = itrac.getWorklogHandler();
@@ -39,7 +39,7 @@ public class ItracReportSummaryAnalyzer extends RuleAnalyzer {
 		report.setItrackey(itrac);
 		final String htmlReportContent = executeRuleAndGetHtmlReportString();
 		ReportBuilder.writeToFile(htmlReportContent,
-				JiraRestConfig.OUTPUT_METRICS + itrac.getKey() + "_Metrics_Summary.html");
+				JiraRestConfig.OUTPUT_METRICS + itrac.getKey() + "_Dev_Metrics_Report.html");
 		return report.getBuilder().toString();
 	}
 

@@ -22,6 +22,7 @@ public final class JiraRestConfig {
 	public static final String ISSUE_PROJECT_REST_PATH = "project";
 	public static final String ISSUE_TIME_TRACKER_REST_PATH = "timetracking";
 	public static final String ISSUE_COMMENT_REST_PATH = "comment";
+	public static final String ISSUE_SEVERITY_REST_PATH = "customfield_10000";
 
 	public static final String ISSUE_WATCHERS_REST_PATH = "/watchers";
 	private static final String project_rest_url = "2/project/";
@@ -30,6 +31,8 @@ public final class JiraRestConfig {
 	private static final String search_jql_rest_url = "2/search?jql=";
 	private static final String commit_rest_utl_pre = "/rest/dev-status/1.0/issue/detail?issueId=";
 	private static final String commit_rest_utl_post = "&applicationType=fecru&dataType=repository";
+	private static final String tcm_trace_rest_url_pre = "/rest/tests/1.0/issue/";
+	private static final String tcm_trace_rest_url_post = "/testcase/tracelinks?type=COVERAGE ";
 	public static final String REST_API_ENDPOINT = "/rest/api/";
 
 	public static final String DEFAULT_TIME_FORMAT = "00:00:00:00";
@@ -62,6 +65,10 @@ public final class JiraRestConfig {
 
 	public static String getCommitUrl(final String id) {
 		return JiraRestCore.getBaseTargetUri() + commit_rest_utl_pre + id + commit_rest_utl_post;
+	}
+
+	public static String getTCMUrlForTrace(final String id) {
+		return JiraRestCore.getBaseTargetUri() + tcm_trace_rest_url_pre + id + tcm_trace_rest_url_post;
 	}
 
 	public static String getProjectUrl(final String id) {
@@ -102,7 +109,6 @@ public final class JiraRestConfig {
 		public static final String FILEDS = "fields";
 		public static final String SUMMARY = "summary";
 		public static final String KEY = "key";
-		public static final String ID = "id";
 		public static final String ISSUES = "issues";
 		public static final String TOTAL = "total";
 		public static final String MAXRESULTS = "maxResults";
@@ -138,7 +144,6 @@ public final class JiraRestConfig {
 		public static final String REPOSITORIES = "repositories";
 		public static final String URL = "url";
 		public static final String COMMITS = "commits";
-		public static final String ID = "id";
 		public static final String FILECOUNT = "fileCount";
 		public static final String MESSAGE = "message";
 		public static final String AUTHOR = "author";
@@ -147,6 +152,17 @@ public final class JiraRestConfig {
 		public static final String CREATED = "created";
 		public static final String BODY = "body";
 		public static final String FILES = "files";
+	}
+
+	public static final class TraceLinks {
+		public static final String TRACELINKS = "traceLinks";
+		public static final String TOTALCOUNT = "totalCount";
+		public static final String ISSUE_ID = "issueId";
+		public static final String TESTCASE = "testCase";
+		public static final String KEY = "key";
+		public static final String TYPE = "type";
+		public static final String PROJECT_ID = "projectId";
+		public static final String STATUS = "status";
 	}
 
 	public static final class Comment {
@@ -189,7 +205,6 @@ public final class JiraRestConfig {
 		public static final String URL = "url";
 		public static final String REVIEWS = "reviews";
 		public static final String REVIEWERS = "reviewers";
-		public static final String ID = "id";
 		public static final String STATE = "state";
 		public static final String TITLE = "title";
 		public static final String DETAIL = "detail";
@@ -198,7 +213,10 @@ public final class JiraRestConfig {
 
 	public static final class Project {
 		public static final String KEY = "key";
-		public static final String NAME = "name";
+	}
+
+	public static final class Severity {
+		public static final String VALUE = "value";
 	}
 
 	public static final class User {
@@ -212,6 +230,7 @@ public final class JiraRestConfig {
 		public static final String NAME = "name";
 		public static final String DESCRIPTION = "description";
 		public static final String NOT_AVAILABLE = "NA";
+		public static final String ID = "id";
 	}
 
 }

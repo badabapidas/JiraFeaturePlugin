@@ -7,7 +7,6 @@ import com.sag.jira.util.JiraRestConfig;
 import com.sag.jira.util.PropertyUtil;
 
 public class JiraRestCore extends BaseClient {
-
 	protected JiraRestCore() {
 	}
 
